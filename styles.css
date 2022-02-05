@@ -1,0 +1,145 @@
+* {
+    font-family: 'Open Sans', sans-serif;;
+}
+p{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+a:hover,
+a:active,
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.section {
+    padding: 100px;
+    text-align: center;
+}
+
+.list {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.list-item {
+    display: inline;
+    margin-left: 40px;
+    text-shadow: 3px 3px 3px #e7e7e7 ;
+}
+
+.link {
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
+    text-decoration: none;
+    color: #828282;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link--active {
+    text-decoration: underline;
+    color: black
+}
+
+.title {
+    text-align: left;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 47.3392px;
+    line-height: 64px;
+    color: #070707;
+}
+
+.nav {
+    border-bottom: 1px solid #828282;
+    margin: auto;
+}
+
+.imgDenis {
+    margin: auto;
+    width: 943.61px;
+    height: 387px;
+}
+
+.header {
+    padding: 0 250px 100px;
+    text-align: center;
+}
+
+.about_me, .Portfolio {
+    background-color: #F6F6F6;
+}
+
+.subtitle {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 46px;
+
+}
+
+.My_Skill {
+    display: inline-block;
+    margin: 70px;
+}
+
+#Figma_margin_fix {
+    margin-bottom: 10px;
+}
+
+.star {
+    margin-right: 8px;
+}
+
+.subtitle_protfolio {
+    margin-bottom: 60px;
+}
+
+.style-link {
+    text-decoration: underline;
+    margin-bottom: 100px;
+}
+
+.buttom {
+    height: 36px;
+    width: 180px;
+    background-color: black;
+    border-radius: 40px;
+    margin: 75px auto 30px;
+    padding: 8px 0 0 8px;
+}
+
+.text-buttom {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    color: #FFFFFF;
+    margin: auto;
+}
+
+.image-link {
+    display: inline-block;
+}
+
+.social-link {
+    margin: 0 30px;
+}
+
+.like-me {
+    font-size: 14px;
+    line-height: 19px;
+    color: #828282;
+    margin-top: 40px;
+}
+
