@@ -1,0 +1,26 @@
+
+
+.header {
+    background-color: #4A4F56;
+    width: 793px;
+    height: 82px;
+    margin: auto;
+    text-align: center;
+}
+
+.section {
+    width: 793px;
+    height: 507px;
+    background-color: #3B3F45;
+    margin: auto;
+}
+
+.title {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #FF8984;
+    margin-top: 19px;
+}
