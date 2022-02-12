@@ -1,0 +1,48 @@
+.text-block {
+    padding: 50px;
+}
+
+.text::first-letter {
+    color: rgb(55, 0, 255);
+}
+
+.text-block::first-line {
+    color: red;
+}
+
+.text::selection {
+    background-color: aqua;
+    color: rgb(255, 0, 234) ;
+}
+
+li::marker {
+    background-color: cadetblue;
+    color: crimson;
+    font-size: 55px;
+}
+
+a:hover {
+    text-decoration: wavy;
+    color: rgb(255, 0, 0);
+}
+
+a:active {
+    color: navy;
+}
+
+a:visited {
+    color: darkolivegreen;
+}
+
+input:checked ~ span {
+    text-decoration: line-through;
+    color: #9b96ac;
+  }
+  
+/* .text-block::before {
+content: url(/);
+}
+
+.text-block::after {
+
+} */
