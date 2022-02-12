@@ -27,6 +27,7 @@
     height: 45px;
     background-color: #88839E;
     margin: auto;
+
  }
 
  .last-content-box {
@@ -57,26 +58,22 @@
 
  .text-last-box {
     font-size: 18px;
-    line-height: 21px;
+    line-height: 45px;
     text-align: center;
     color: #FF8984;
-    padding-top: 12px;
  }
  
  .text {
    font-size: 18px;
    color: #FFFFFF;
-   display: inline-block;
-   line-height: 21px;
-   padding-bottom: 20px; 
-   }
+   line-height: 45px;
+}
 
   
  .text-litle{
    font-size: 11px;
    color: #FFFFFF;
    line-height: 13px;
-   display: inline-block;
 }
 
 
