@@ -1,5 +1,5 @@
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'PT sans';
     margin-left: 5px;
 }
 
@@ -33,6 +33,7 @@ article {
 }
 
 .title {
+    font-family: 'PT sans';
     font-style: normal;
     font-size: 24px;
 }
