@@ -1,0 +1,62 @@
+* {
+    font-family: 'Roboto', 'PT sans';
+    margin-left: 5px;
+}
+
+.documentation {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    padding-left: 10px ;
+
+}
+
+.eng {
+    height: 12px;
+    width: 28px;
+    margin-top: 4px;
+}
+
+.logo {
+    height: 35px;
+    width: 150px;
+    margin-left: auto;
+}
+
+header {
+    display: flex;
+}
+
+article {
+    padding: 10px;
+}
+
+.title {
+    font-family: 'PT sans';
+    font-style: normal;
+    font-size: 24px;
+}
+
+.bold-text {
+    font-weight: 700;
+}
+.underline-text {
+    text-decoration: underline;
+}
+
+sup {
+    font-size: 12px;
+}
+
+p {
+    font-size: 20px;
+}
+
+main {
+    padding: 0px 5px 300px;
+}
+
+.example {
+    background-color: rgb(230, 230, 230);
+}
