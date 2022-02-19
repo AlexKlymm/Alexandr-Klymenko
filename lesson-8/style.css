@@ -10,6 +10,13 @@
     margin-left: 20px;
 }
 
+.text-button-footer {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: white;
+}
+
 .text-menu {
     font-size: 14px;
     line-height: 28px;
@@ -96,10 +103,6 @@
     margin-bottom: 100px;
 }
 
-.content-box-main-img {
-
-}
-
 .content-box-main {
     margin-top: 80px;
     margin-right: 15px;
@@ -109,6 +112,11 @@
     margin-right: 45px;
     height: 178px;
     width: 240px;
+}
+
+.contact-footer, 
+.disclaimer-footer {
+    margin-top: 150px;
 }
 
 .header {
@@ -204,7 +212,8 @@
 }
 
 .footer-link {
-    text-decoration: none;
+    list-style-type: none;
+    line-height: 35px;
 }
 
 .footer-link:focus {
@@ -215,13 +224,22 @@
     width: 131px;
     border-radius: 4px;
     background-color: #FF9900;
+    margin-top: 20px;
 }
 
 .footer-logo {
     margin-top: 100px;
 }
 
-.footer-box-content {
-
+.footer {
+    padding-bottom: 80px;
 }
 
+.footer-input {
+    height: 48px;
+    width: 325px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    border: 1px solid #BCD0E5;
+    margin-top: 170px;
+}
