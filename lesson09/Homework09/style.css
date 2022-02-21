@@ -1,0 +1,92 @@
+.header {
+    padding: 0px 40px;
+}
+
+    .header__block {
+        display: flex;
+        
+    }
+
+        .header__border {
+            width: 1860px;
+            height: 0px;
+            border: 1px solid #BFBFBF;
+        }
+
+        .header__title {
+            font-family: Roboto;
+            font-size: 20px;
+            line-height: 23px;
+        }
+
+        .header__image-eng {
+            Width: 41px;
+            Height: 23px;
+            margin-right: 40px;
+            margin-bottom: -5px;
+        }
+
+        .header__block-bottom-title {
+            padding-top: 80px;
+            padding-bottom: 10px;
+        }
+
+            .header__bottom-title {
+                font-family: Roboto;
+                font-size: 36px;
+                line-height: 42px;
+
+            }
+
+        .header__right-side-block {
+            position: relative;
+            left: 70%;
+            width: 245px;
+            height: 55px;
+        }
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+    .card {
+        margin-top: 30px;
+        width: 440px;
+        height: 281px;
+    }
+    
+        .card__outer-image {
+            position: absolute;
+            transform: scaleY(-1);
+        }
+    
+    
+        .card__inner-image {
+            position: relative;
+        }
+    
+        .card:hover {
+            transform: rotate3d(1, 0, 0, 180deg);
+            transition: 1.5s;
+        }
+    
+        .card__inner-image:hover {
+            visibility: hidden;
+            transition: 0.5s;
+        }
+    
+            .card__image-size {
+                height: 280px;
+                width: 440px;
+            }
+
+            .card__image__inner-size {
+                height: 288px;
+                width: 444px;
+            }
+
+
+
+
