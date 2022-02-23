@@ -1,0 +1,104 @@
+* {
+    font-family: Inter;
+}
+
+body {
+    background-color: #F2F2F2;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 35%;
+    height: 570px;
+    width: 520px;
+    border-radius: 6px;
+    padding: 20px;
+    background-color: white;
+}
+
+    .form__title {
+        font-size: 24px;
+        line-height: 32px;
+        color: #1C1C1C;
+        font-weight: 800;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+    .form__text {
+        font-family: Inter;
+        font-style: normal;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 22px;
+        color: #545454;
+    }
+
+    .form__input__style {
+        height: 38px;
+        width: 245px;
+        border-radius: 6px;
+        background: #FFFFFF;
+        border: 1px solid #E4E4E4;
+        box-sizing: border-box;
+        margin-top: 7px;
+    }
+
+    .form__input__style:focus {
+        outline: 2px solid #42d1e4;
+    }
+
+    .form__block {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    
+        .form__block-E-mail, .form__button-large-text {
+            height: 38px;
+            width: 510px;
+            border-radius: 6px;
+        
+        }
+
+    .form__text-small {
+        font-size: 13px;
+        line-height: 18px;
+        color: #969696;
+    }
+
+        .form-box-radion {
+            vertical-align: middle;
+        }
+
+            .form__radio {
+                height: 20px;
+                width: 20px;
+            }
+
+    .form__terms-box {
+        text-align: center;
+    }
+
+        .form__text-terms {
+            margin: 0;
+        }
+
+        .text__link {
+            text-decoration: none;
+            margin: 0;
+            color: #007BFF;
+        }
+
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+    .footer__border {
+        height: 1px;
+        width: 500px;
+        background-color: #E4E4E4;
+        
+    }
