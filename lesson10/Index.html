@@ -5,167 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
     <body>
-
         <main 
         class="main">
-            <p 
-            class="form__title">
-            Create an Account
-            </p>
-            <div 
-            class="form__block">
-                <div 
-                class="form__block-first-name">
-                    <label 
-                    class="form__text">
-                        First Name
-                    </label>
-                    <input 
-                    type="text" 
-                    name="" 
-                    id=""
-                    class="form__input__style">
-                </div>
-
-                <div 
-                class="form__block-last-name">
-                    <label 
-                    class="form__text">
-                        Last Name
-                    </label>
-                    <input 
-                    type="text" 
-                    name="" 
-                    id=""
-                    class="form__input__style">
-                </div>
-            </div>
-            <div 
-            class="form__block">
-                <div 
-                    class="form__box-E-mail">
-                    <label 
-                    class="form__text">
-                        E-mail
-                    </label>
-                    <input 
-                    type="email" 
-                    name="" 
-                    id=""
-                    class="form__input__style form__block-E-mail">
-                    <span 
-                    class="form__text-small">
-                        We'll never share your email with anyone else.
-                    </span>
-                </div>
-            </div>
-            <div 
-            class="form__block">
-                <label 
-                for="form__radio__id-male"
-                class="form__text">
-                    <input 
-                    type="radio" 
-                    class="form__radio"
-                    id="form__radio__id-male">
-                        Male
-                </label>
-                <label 
-                for="form__radio__id-female"
-                class="form__text form__b0x-radio">
-                    <input 
-                    type="radio" 
-                    class="form__radio"
-                    id="form__radio__id-female">
-                        Female
-                </label>
-                </div>
-            <div 
-            class="form__block">
-                <div 
-                class="form__block-country">
-                    <label 
-                    class="form__text">
-                        Country
-                    </label>
-                    <select 
-                    name="text" 
-                    id=""
-                    class="form__input__style"
-                    placeholder="Select">
-                        <option value="option1">Country</option>
-                        <option value="">Country</option>
-                        <option value="">Country</option>
-                        <option value="">Country</option>
-                        <option value="">Country</option>
-                    </select>
-                </div>
-
-                <div 
-                class="form__block-city">
-                    <label 
-                    class="form__text">
-                        City
-                    </label>
-                    <input 
-                    type="text" 
-                    name="" 
-                    id=""
-                    class="form__input__style">
-                </div>
-            </div>
-            <div 
-            class="form__block">
-                <div 
-                class="form__button-large-text">
-                    <input 
-                    type="email" 
-                    name="" 
-                    id=""
-                    class="form__input__style form__block-E-mail">
-                </div>
-            </div>
-            <div 
-            class="form__terms-box">
+            <form 
+            class="form">
                 <p 
-                class="form__text-small  form__text-terms">
-                    By clicking the 'Sign Up' button, you confirm that you accept our
-                    <p
-                    class="form__text-small form__text-terms">
-                       <a 
-                       href="#" 
-                       class="form__text-small text__link">
-                       Terms of Use
-                       </a> 
-                       and 
-                       <a 
-                       href="#" 
-                       class="form__text-small text__link">
-                       Privacy Policy
-                       </a>
-                    </p>
+                class="title">
+                    Create an Account
                 </p>
-            </div>
-            <footer 
-            class="footer">
                 <div 
-                class="footer__border">
+                class="form__block">
+
+                    <label for="" 
+                    class="text form__label form__label--name">
+                            First Name
+                        <input 
+                        type="text" 
+                        class="form__input form__input--name"
+                        required autofocus>
+                    </label>
+
+                    <label for="" 
+                    class="text form__label form__label--last-name ">
+                            Last Name
+                        <input 
+                        type="text" 
+                        class="form__input form__input--last-name">
+                    </label>
                 </div>
-                <p class="form__text">
-                    Have an account?
-                    <a 
-                    href="#" 
-                    class="form__text text__link">
-                        Log In
-                    </a>
-                </p>
-            </footer>
+                <div 
+                class="form__block">
+                    <label for="" 
+                    class="text form__label form__label--E-mail ">
+                            E-mail
+                        <input 
+                        type="text" 
+                        class="form__input form__input--E-mail">
+                        <span 
+                        class="small__text">
+                            We'll never share your email with anyone else.
+                        </span>
+                    </label>
+                </div>
+                <div 
+                class="form__block">
+                    <label 
+                    for="" 
+                    class="radio_box">
+                </label>
+                <label 
+                for="" 
+                class="radio_box">
+            </label>
+                </div>
+            </form>
+
+            <form 
+            class="form">
+
+            </form>
         </main>
+
     </body>
 </html>

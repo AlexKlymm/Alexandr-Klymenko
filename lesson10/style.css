@@ -8,97 +8,70 @@ body {
 
 .main {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    left: 35%;
-    height: 570px;
-    width: 520px;
-    border-radius: 6px;
-    padding: 20px;
-    background-color: white;
+    justify-content: center;
 }
 
-    .form__title {
+    .form {
+        display: flex;
+        flex-direction: column;
+        margin: 0px 20px;
+        height: 570px;
+        width: 520px;
+        border-radius: 6px;
+        padding: 20px;
+        background-color: white;
+    }
+
+    .title {
         font-size: 24px;
         line-height: 32px;
         color: #1C1C1C;
         font-weight: 800;
-        margin-bottom: 20px;
-        margin-top: 0px;
     }
 
-    .form__text {
-        font-family: Inter;
-        font-style: normal;
+    .text {
         font-size: 15px;
-        font-weight: 400;
         line-height: 22px;
         color: #545454;
     }
 
-    .form__input__style {
-        height: 38px;
-        width: 245px;
-        border-radius: 6px;
-        background: #FFFFFF;
-        border: 1px solid #E4E4E4;
-        box-sizing: border-box;
-        margin-top: 7px;
-    }
-
-    .form__input__style:focus {
-        outline: 2px solid #42d1e4;
-    }
-
-    .form__block {
-        display: flex;
-        margin-bottom: 20px;
-    }
-    
-        .form__block-E-mail, .form__button-large-text {
-            height: 38px;
-            width: 510px;
-            border-radius: 6px;
-        
-        }
-
-    .form__text-small {
+    .small__text {
         font-size: 13px;
         line-height: 18px;
         color: #969696;
     }
 
-        .form-box-radion {
-            vertical-align: middle;
+        .form__block {
+            display: flex;
+            margin-top: 20px;
         }
 
-            .form__radio {
-                height: 20px;
-                width: 20px;
+            .form__label {
+                
             }
 
-    .form__terms-box {
-        text-align: center;
-    }
+            .form__label--E-mail {
+                width: 100%;
+            }
 
-        .form__text-terms {
-            margin: 0;
-        }
+            .form__label--last-name {
+                margin-left: 20px;
+            }
 
-        .text__link {
-            text-decoration: none;
-            margin: 0;
-            color: #007BFF;
-        }
+                .form__input {
+                    width: 250px;
+                    height: 38px;
+                    border: 1px solid #E4E4E4;
+                    box-sizing: border-box;
+                    border-radius: 6px;
+                    margin-top: 7px;
+                }
 
-.footer {
-    display: flex;
-    flex-direction: column;
-}
+                .form__input--last-name {
 
-    .footer__border {
-        height: 1px;
-        width: 500px;
-        background-color: #E4E4E4;
-        
-    }
+                }
+
+                .form__input--E-mail {
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
