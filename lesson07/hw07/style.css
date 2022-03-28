@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0px 145px;
+}
+
+/* .header,*/ .navigation { 
+    display: inline-block;
+}
+
+.navigation {
+    margin-left: auto;
+}
+
+.logo-box {
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.logo-text {
+    height: 20px;
+    width: 100px;
+}
+
+.logo-icon {
+    height: 25px;
+    width: 25px;
+
+}
+
+.button-sign-up,
+.button-sign-in {
+    height: 46px;
+    width: 102px;
+    border-radius: 4px;
+    margin: 15px 0px 15px 15px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.button-sign-in {
+    background-color: white;
+    border: 1px solid #BCD0E5;
+}
+
+.button-sign-up {
+    background-color: #FF9900;
+    color: white;
+    border: none;
+}
+
+.menu {
+    margin-left: 350px;
+}
+
+.menu-item {
+    display: inline-block;
+    text-decoration: none;
+    margin: 25px 15px;
+    font-family: Poppins;
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.main-title {
+    font-family: Poppins;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 54px;
+    margin-bottom: 30px;
+    margin-top: 45px;
+}
+
+.text-main {
+    font-family: Poppins;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: left;
+}
+
+.button-get_started {
+    background-color: #FF9900;
+    color: white;
+    border: none;
+    height: 53px;
+    width: 175px;
+    border-radius: 4px;
+    margin: 45px 30px 0px 0px;
+    font-size: 16px;
+}
+
+.watch-the-video-text {
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #FF9900;
+}
+
+.left-side {
+    display: inline-block;
+    margin-top: 100px;
+}
+
+.main-image {
+    height: 494px;
+    width: 600px;
+    border-radius: 0px;
+
+}
+
+.main-image-box {
+    /* display: inline-block; */
+    margin-left: 50px;
+    margin-top: 40px;
+    float: right;
+}
+
+.watch-the-video-block {
+    display: inline-block;
+    height: 40px;
+}
+
+.watch-the-video-icon {
+    margin-right: 8px;
+    display: inline-flex;
+}

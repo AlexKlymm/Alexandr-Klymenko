@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 0;
+}
+
+.main-div {
+    height: 547px;
+    width: 800px;
+    background-color: #3399CC;
+    border: 16px solid #2B81AC;
+    padding: 110px 130px;
+    font-size: 0;
+}
+
+.second-div {
+    height: 100%;
+    border: 3px solid white;
+}
+
+.collumn {
+    display: inline-block;
+    outline: 3px solid white;
+    height: 80px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 16px;
+    font-weight: 700px;
+}
+
+.collumn-1-row-1 {
+    width: 50%;
+    background-color: #3399CC;
+}
+
+
+
+.collumn-2-row-1 {
+    background-color: #33CCCC;
+}
+
+.collumn-3-row-1 {
+    background-color: #996699;
+}
+.collumn-2-row-1, 
+.collumn-3-row-1,
+.collumn-1-row-2,
+.collumn-2-row-2,
+.collumn-3-row-2,
+.collumn-4-row-2,
+.collumn-1-row-3, 
+.collumn-3-row-3 {
+    width: 25%;
+}
+
+.collumn-1-row-2 {
+    background-color: #C24747;
+}
+
+.collumn-2-row-2 {
+    background-color: #E2674A;
+}
+
+.collumn-3-row-2 {
+    background-color: #FFCC66;
+
+}
+
+.collumn-4-row-2 {
+    background-color: #99CC99;
+    
+}
+
+.collumn-1-row-3 {
+    background-color: #669999;
+}
+
+.collumn-3-row-3 {
+    background-color: #339966;
+}
+
+.collumn-2-row-3 {
+    width: 50%;
+    background-color: #CC6699;
+}
+
+.collumn-1-row-4 {
+    width: 100%;
+    background-color: #666699;
+}

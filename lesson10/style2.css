@@ -1,0 +1,8 @@
+.h1 {
+    font-size: 45px;
+    color: brown;
+    background-color: aqua;
+    text-decoration: underline;
+    border: 2px solid yellow;
+    text-align: center;
+}
