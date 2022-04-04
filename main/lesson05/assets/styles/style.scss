@@ -1,0 +1,39 @@
+$base_fz: 16;
+$gold_color: #FFCC00;
+$title_color: #666666;
+
+@mixin fz($size_in_px){
+    font-size:($size_in_px/$base_fz)+rem;
+  }
+
+@import url('reset');
+@import url('fonts');
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    .header_title {
+        color: #898F8F;
+        @include fz (24);
+        text-transform: uppercase;
+        font-family: 'Raleway';
+        line-height: 24px;
+    }
+    .header_main-title {
+        @include fz (60);
+        line-height: 66px;
+        font-family: 'Roboto';
+        color: $gold_color;
+        text-transform: uppercase;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+        div {
+            width: 210px;
+            border: 1px solid $gold_color;
+        }
+    }
+}
