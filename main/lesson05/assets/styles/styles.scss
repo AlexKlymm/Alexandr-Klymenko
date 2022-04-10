@@ -6,8 +6,13 @@ $title_color: #666666;
     font-size:($size_in_px/$base_fz)+rem;
   }
 
-@import url('reset');
-@import url('fonts');
+@import 'reset';
+@import 'fonts';
+
+
+body {
+    padding: 110px 390px 0;
+}
 
 header {
     display: flex;
@@ -20,6 +25,7 @@ header {
         text-transform: uppercase;
         font-family: 'Raleway';
         line-height: 24px;
+        padding-bottom: 15px;
     }
     .header_main-title {
         @include fz (60);
@@ -27,13 +33,33 @@ header {
         font-family: 'Roboto';
         color: $gold_color;
         text-transform: uppercase;
+        padding-bottom: 40px;
     }
     div {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         div {
+            height: 0px;
             width: 210px;
             border: 1px solid $gold_color;
         }
+        img {
+            padding: 0 5px;
+        }
+    }
+}
+
+main {
+    display: flex;
+    position: relative;
+    div {
+        width: 560px;
+        height: 0;
+        border: 1px solid $gold_color;
+        transform: rotate(90deg);
+        position: absolute;
+        left: 290px;
+        top: 320px;
     }
 }
