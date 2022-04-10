@@ -1,0 +1,245 @@
+.body {
+    padding: 40px 145px;
+    font-family: Poppins, 'PT Sans', sans-serif;
+}
+
+.text-button {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-left: 20px;
+}
+
+.text-button-footer {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: white;
+}
+
+.text-menu {
+    font-size: 14px;
+    line-height: 28px;
+    color: #2F281E;
+    padding: 0px 15px;
+}
+
+.text-main-section {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: #544837;
+    margin-bottom: 0;
+}
+
+.text-section {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #544837;
+}
+
+.text-section-bold {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #2F281E;
+    font-weight: 700;
+    margin: 25px 0px 10px 0px;
+}
+
+
+.text-title {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 54px;
+    color: #2F281E;
+    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+
+
+.text-section-2::before {
+    content: url(/lesson-8/Photos/Group\ 13.svg);
+}
+
+.text-section-2 {
+    text-align: center;
+}
+
+.text-link:visited {
+    color: #FF9900;
+}
+
+.text-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #FF9900;
+    margin-left: 15px;
+}
+
+.text-link::before {
+    content: url(/lesson-8/Photos/btn.svg);
+}
+
+.menu-item {
+    font-size: 14px;
+    line-height: 28px;
+    color: #2F281E;
+}
+
+.medium-title {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 33px;
+    text-align: left;
+}
+
+.main-section {
+    margin-bottom: 100px;
+}
+
+.content-box-main {
+    margin-top: 80px;
+    margin-right: 15px;
+}
+
+.collumn-item {
+    margin-right: 45px;
+    height: 178px;
+    width: 240px;
+}
+
+.contact-footer, 
+.disclaimer-footer {
+    margin-top: 150px;
+}
+
+.header {
+    padding-bottom: 25px;
+}
+
+.sub-title-section {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.sub-title-section2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.section1-items {
+    margin-top: 55px;
+}
+
+.section-2-4-left-side {
+    margin-right: 100px;
+}
+
+.section-3-left-side {
+    margin-right: 100px;
+}
+
+.section-2-4-left-side, 
+.section-2-4-right-side {
+    margin-top: 100px;
+}
+
+.sign-up-section1 {
+    height: 53px;
+    width: 175px;
+    border-radius: 4px;
+    background-color: #FF9900;
+    color: white;
+    margin-top: 60px;
+
+}
+
+.sign-up, .sign-in {
+    height: 46px;
+    width: 102px;
+    border-radius: 4px;
+}
+
+.sign-in {
+    background-color: white;
+    border: 1px solid #BCD0E5;
+    border-radius: 4px;
+    color: #2F281E;
+}
+
+.sign-up {
+    background-color: #FF9900;
+    color: white;
+}
+
+.section {
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.img-collum-section2 {
+    margin-bottom: 30px;
+}
+
+.Get-Started-button {
+    height: 53px;
+    width: 175px;
+    border-radius: 4px;
+    background-color: #FF9900;
+    margin-left: 0px;
+    margin-right: 15px;
+    color: white;
+}
+
+.button-main {
+    margin-top: 45px;
+}
+
+.footer-border {
+    height: 1px;
+    width: 1100px;
+    border-radius: 0px;
+    background-color: #BCD0E57F;
+}
+
+.footer-link {
+    list-style-type: none;
+    line-height: 35px;
+}
+
+.footer-link:focus {
+    color: #544837;
+}
+.footer-button {
+    height: 39px;
+    width: 131px;
+    border-radius: 4px;
+    background-color: #FF9900;
+    margin-top: 20px;
+}
+
+.footer-logo {
+    margin-top: 100px;
+}
+
+.footer {
+    padding-bottom: 80px;
+}
+
+.footer-input {
+    height: 48px;
+    width: 325px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    border: 1px solid #BCD0E5;
+    margin-top: 170px;
+}
