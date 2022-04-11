@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/style.min.css">
+</head>
+    <body>
+            <section>
+                <form method="post" action="#">
+                    <h1>Create an Account</h1>
+                    <div class="form_name">
+                        <label for="name"> First Name
+                            <input type="text" name="name" class="input_small input_small-margin">
+                        </label>
+
+                        <label for="full-name"> Last Name
+                            <input type="text" name="full-name" class="input_small">
+                        </label>
+                    </div>
+
+                    <div class="form_email">
+                        <label for="email">E-mail
+                            <input type="email" name="name">
+                        </label>
+                        <span class="text_small">We'll never share your email with anyone else.</span>
+                    </div>
+
+                    <div class="form_radio">
+                            <input type="radio" name="gender" value="male" id="male" class="radio_male-margin" checked> 
+                            <label for="male">Male</label>
+                            <input type="radio" name="gender" value="female" id="female" class="radio_female-margin">
+                            <label for="female">Female</label>
+                    </div>
+
+                    <div class="form_region">
+                        <label for="city" > City
+                            <input type="text" name="city" class="input_small">
+                        </label>
+                        
+                        <label> Country
+                            <select  name="country" class="input_small">
+                                <option value="">USA</option>
+                                <option value="">Great Britain</option>
+                                <option value="">French</option>
+                                <option value="">Poland</option>
+                                <option value="">German</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div>
+                        <button type="submit">Sign Up</button>
+                    </div>
+                    <div>
+                        <p class="text_small">By clicking the 'Sign Up' button, you 
+                            confirm that you accept our.</p>
+                        <p class="text_small"><a href="#">Terms of Use</a> 
+                            and <a href="#">Privat Policy</a></p>
+                    </div>
+                    <footer>
+                        <div></div>
+                        <p>Have an account? <a href="#">Log In</a></p>
+                    </footer>
+                </form>
+            </section>
+
+            <section>
+                
+            </section>
+        </body>
+</html>
