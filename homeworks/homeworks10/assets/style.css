@@ -74,7 +74,7 @@ main section form .account_title button {
 }
 main section form .account_title button::before {
   content: "";
-  background-image: url(/assets/Photos/trash-box.png);
+  background-image: url(./Photos/trash-box.png);
   position: absolute;
   width: 10px;
   height: 12px;
@@ -92,7 +92,7 @@ main section form .account_title label {
 }
 main section form .account_title label:before {
   content: "";
-  background-image: url(/assets/Photos/photo-icon.png);
+  background-image: url(./Photos/photo-icon.png);
   position: absolute;
   width: 14px;
   height: 12px;
@@ -117,7 +117,7 @@ main section form .form_region div .select_country {
 main section form .form_region div .select_country::before {
   content: "";
   position: absolute;
-  background-image: url(/assets/Photos/Arrow_Double.png);
+  background-image: url(./Photos/Arrow_Double.png);
   width: 18px;
   height: 18px;
   top: 41px;
