@@ -23,19 +23,18 @@ a:hover {
   text-decoration: underline;
 }
 
-ol, ul {
-  list-style: none;
-}
-
-body {
+main {
   background-color: #F7F7F7;
   padding: 50px;
   display: flex;
   justify-content: space-around;
   font-size: 1rem;
   line-height: 1.5rem;
+  height: 1236px;
+  width: 1210px;
+  margin: auto;
 }
-body section {
+main section {
   height: 590px;
   max-width: 540px;
   width: 100%;
@@ -43,18 +42,89 @@ body section {
   background-color: white;
   padding: 20px;
 }
-body section form {
+main section form {
   display: flex;
   flex-direction: column;
   color: #545454;
 }
-body section form .form_name {
+main section form .form_name, main section form .form_number {
   display: flex;
+  justify-content: space-between;
 }
-body section form .form_region {
+main section form .account_title {
   display: flex;
+  align-content: center;
 }
-body section form h1 {
+main section form .account_title p {
+  position: relative;
+  right: 170px;
+  top: 39px;
+}
+main section form .account_title img {
+  padding-right: 20px;
+}
+main section form .account_title button {
+  width: 30px;
+  height: 30px;
+  background-color: #FFFFFF;
+  position: relative;
+  border: 1px solid #E4E4E4;
+  margin-left: 10px;
+  margin-top: 0px;
+}
+main section form .account_title button::before {
+  content: "";
+  background-image: url(/assets/Photos/trash-box.png);
+  position: absolute;
+  width: 10px;
+  height: 12px;
+  left: 9px;
+  bottom: 8px;
+}
+main section form .account_title label {
+  height: 30px;
+  max-width: 130px;
+  width: 100%;
+  border: 1px solid #E4E4E4;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  position: relative;
+}
+main section form .account_title label:before {
+  content: "";
+  background-image: url(/assets/Photos/photo-icon.png);
+  position: absolute;
+  width: 14px;
+  height: 12px;
+  left: 105px;
+  top: 8px;
+}
+main section form .account_title label input {
+  opacity: 0;
+}
+main section form .form_region {
+  display: flex;
+  justify-content: space-between;
+}
+main section form .form_region div {
+  padding: 0px;
+  max-width: 245px;
+  width: 100%;
+}
+main section form .form_region div .select_country {
+  position: relative;
+}
+main section form .form_region div .select_country::before {
+  content: "";
+  position: absolute;
+  background-image: url(/assets/Photos/Arrow_Double.png);
+  width: 18px;
+  height: 18px;
+  top: 41px;
+  left: 226px;
+  background-color: #fff;
+}
+main section form h1 {
   color: #1C1C1C;
   padding: 5px 0px 10px;
 }
@@ -105,12 +175,21 @@ input[type=radio]:checked + label::after {
   z-index: 3;
 }
 
-.radio_male-margin {
-  margin-left: 5px;
+label {
+  display: block;
 }
 
-.radio_female-margin {
-  margin-left: 28px;
+input[type=text], input[type=email], input[type=number], input[type=file], button, select {
+  background-color: #FFFFFF;
+  border: 1px solid #E4E4E4;
+  border-radius: 6px;
+  width: 100%;
+  height: 38px;
+  margin-top: 7px;
+}
+
+input:hover, input:focus, input:active, select:hover, select:focus, select:active, button:hover, button:focus, button:active {
+  outline: 1px solid #007BFF;
 }
 
 .input_small {
@@ -122,29 +201,26 @@ input[type=radio]:checked + label::after {
   margin-right: 10px;
 }
 
-div {
-  padding: 10px 0;
-}
-
-label {
-  display: block;
-}
-
-input[type=text], input[type=email], button, select {
-  background-color: #FFFFFF;
-  border: 1px solid #E4E4E4;
-  border-radius: 6px;
-  width: 100%;
-  height: 38px;
-  margin-top: 7px;
-}
-input[type=text]:hover, input[type=text]:focus, input[type=email]:hover, input[type=email]:focus, button:hover, button:focus, select:hover, select:focus {
-  border: 1px solid #007BFF;
-}
-
 .text_small {
   color: #969696;
   font-size: 13px;
+}
+
+.account_button {
+  width: 100%;
+  max-width: 130px;
+}
+
+.radio_male-margin {
+  margin-left: 5px;
+}
+
+.radio_female-margin {
+  margin-left: 28px;
+}
+
+div {
+  padding: 10px 0;
 }
 
 button {

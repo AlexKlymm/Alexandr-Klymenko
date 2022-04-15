@@ -30,18 +30,16 @@ a:hover {
     text-decoration: underline;
 }
 
-ol, ul {
-    list-style: none;
-}
-
-
-body {
+main {
     background-color: #F7F7F7;
     padding: 50px;
     display: flex;
     justify-content: space-around;
     font-size: 1rem;
     line-height: 1.5rem;
+    height: 1236px;
+    width: 1210px;
+    margin: auto;
     section{
         height: 590px;
         max-width: 540px;
@@ -53,13 +51,83 @@ body {
             display: flex;
             flex-direction: column;
             color: $text_color;
-            .form_name {
+            .form_name, .form_number {
                 display: flex;
+                justify-content: space-between;
             }
 
+            .account_title {
+                display: flex;
+                align-content: center;
+                p {
+                    position: relative;
+                    right: 170px;
+                    top: 39px;
+                }
+                img {
+                    padding-right: 20px;
+                }
+                button {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #FFFFFF;
+                    position: relative;
+                    border: 1px solid $input_gray;
+                    margin-left: 10px;
+                    margin-top: 0px;
+                    &::before {
+                        content: '';
+                        background-image: url(/assets/Photos/trash-box.png);
+                        position: absolute;
+                        width: 10px;
+                        height: 12px;
+                        left: 9px;
+                        bottom: 8px;
+                    }
+                }
+                label {
+                    height: 30px;
+                    max-width: 130px;
+                    width: 100%;
+                    border: 1px solid $input_gray;
+                    background-color: #FFFFFF;
+                    border-radius: 6px;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        background-image: url(/assets/Photos/photo-icon.png);
+                        position: absolute;
+                        width: 14px;
+                        height: 12px;
+                        left: 105px;
+                        top: 8px;
+                    }
+                    input {
+                        opacity: 0;
+                    }
+                }
+           }
             .form_region {
                 display: flex;
-
+                justify-content: space-between;
+                div {
+                    padding: 0px;
+                    max-width: 245px;
+                    width: 100%;
+                    .select_country {
+                        position: relative;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            background-image: url(/assets/Photos/Arrow_Double.png);
+                            width: 18px;
+                            height: 18px;
+                            top: 41px;
+                            left: 226px;
+                            background-color: #fff;
+                        }
+                    }
+                }
             }
             h1 {
                 color: #1C1C1C;
@@ -116,6 +184,46 @@ input[type=radio]:checked+label::after {
     z-index: 3;
 }
 
+label {
+    display: block;
+}
+
+input[type=text], input[type=email], input[type=number], input[type=file], button, select {
+    background-color: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    border-radius: 6px;
+    width: 100%;
+    height: 38px;
+    margin-top: 7px;
+}
+
+input, select, button {
+    &:hover, &:focus, &:active {
+        outline: 1px solid $active_color;
+    }
+}
+
+.input_small {
+    max-width: 245px;
+    width: 100%;
+}
+
+.input_small-margin {
+    margin-right: 10px;
+}
+
+
+.text_small {
+    color: #969696;
+    font-size: 13px;
+}
+
+.account_button {
+    width: 100%;
+    max-width: 130px;
+}
+
+
 .radio_male-margin {
     margin-left: 5px;
 }
@@ -124,40 +232,9 @@ input[type=radio]:checked+label::after {
     margin-left: 28px;
 }
 
-.input_small {
-    max-width: 245px;
-    width: 100%;
-}
-
-
-.input_small-margin {
-    margin-right: 10px;
-}
 
 div {
     padding: 10px 0;
-}
-
-
-label {
-    display: block;
-}
-
-input[type=text], input[type=email], button, select {
-    background-color: #FFFFFF;
-    border: 1px solid #E4E4E4;
-    border-radius: 6px;
-    width: 100%;
-    height: 38px;
-    margin-top: 7px;
-    &:hover, &:focus {
-        border: 1px solid #007BFF; 
-    }
-}
-
-.text_small {
-    color: #969696;
-    font-size: 13px;
 }
 
 button {

@@ -8,16 +8,17 @@
     <link rel="stylesheet" href="/assets/style.min.css">
 </head>
     <body>
-            <section>
+        <main>
+            <section class="registration">
                 <form method="post" action="#">
                     <h1>Create an Account</h1>
                     <div class="form_name">
-                        <label for="name"> First Name
-                            <input type="text" name="name" class="input_small input_small-margin">
+                        <label for="name" class="input_small" > First Name
+                            <input type="text" name="name">
                         </label>
 
-                        <label for="full-name"> Last Name
-                            <input type="text" name="full-name" class="input_small">
+                        <label for="full-name" class="input_small"> Last Name
+                            <input type="text" name="full-name">
                         </label>
                     </div>
 
@@ -36,19 +37,22 @@
                     </div>
 
                     <div class="form_region">
-                        <label for="city" > City
-                            <input type="text" name="city" class="input_small">
-                        </label>
-                        
-                        <label> Country
-                            <select  name="country" class="input_small">
-                                <option value="">USA</option>
-                                <option value="">Great Britain</option>
-                                <option value="">French</option>
-                                <option value="">Poland</option>
-                                <option value="">German</option>
-                            </select>
-                        </label>
+                        <div class="country_box">
+                              <label class="select_country"> Country
+                                 <select  name="country" class="input_small">
+                                     <option value="">USA</option>
+                                     <option value="">Great Britain</option>
+                                     <option value="">French</option>
+                                     <option value="">Poland</option>
+                                     <option value="">German</option>
+                                 </select>
+                             </label>
+                         </div>
+                         <div class="city_box">
+                            <label for="city" > City
+                                <input type="text" name="city" class="input_small">
+                            </label>
+                        </div>
                     </div>
                     <div>
                         <button type="submit">Sign Up</button>
@@ -66,8 +70,56 @@
                 </form>
             </section>
 
-            <section>
-                
+            <section class="account">
+                <form method="post" action="#">
+                    <h1>Profile</h1>
+                    <div class="account_title">
+                        <img src="/assets/Photos/account-title.png" alt="man-picture">
+                        <label for="photo" class="text_small">
+                            <input type="file" name="photo" class="input_file">
+                        </label>
+                        <button class="button_delete"></button>
+                        <p class="text_small">Up to 1 MB (300x300 px)</p>
+                    </div>
+                    <div class="form_name">
+                        <label for="name" class="input_small" >Name
+                            <input type="text" name="name">
+                        </label>
+
+                        <label for="email" class="input_small">E-mail
+                            <input type="email" name="email">
+                        </label>
+                    </div>
+                    <div class="form_region">
+                        <div class="country_box">
+                              <label class="select_country"> Country
+                                 <select  name="country" class="input_small">
+                                     <option value="">USA</option>
+                                     <option value="">Great Britain</option>
+                                     <option value="">French</option>
+                                     <option value="">Poland</option>
+                                     <option value="">German</option>
+                                 </select>
+                             </label>
+                         </div>
+                         <div class="city_box">
+                            <label for="city" > City
+                                <input type="text" name="city" class="input_small">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form_number">
+                        <label for="code" class="input_small" >Zip Code
+                            <input type="number" name="code">
+                        </label>
+
+                        <label for="phone-number" class="input_small">Phone Number
+                            <input type="number" name="phone-number">
+                        </label>
+                    </div>
+                    <button type="submit" class="account_button">Update</button>
+                </form>
             </section>
-        </body>
+        </main>
+    </body>
 </html>
