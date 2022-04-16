@@ -10,7 +10,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url(/homeworks/homework03/Photos/Star1.png);
+    background-image: url(Photos/Star1.png);
     background-repeat: no-repeat;
 }
 
@@ -27,5 +27,5 @@
 .stars-3 .star:nth-child(-n + 3),
 .stars-4 .star:nth-child(-n + 4),
 .stars-5 .star:nth-child(-n + 5) {
-background-image: url(/homeworks/homework03/Photos/Star.png)
+background-image: url(Photos/Star.png)
 }

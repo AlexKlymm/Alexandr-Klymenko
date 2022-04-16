@@ -119,7 +119,7 @@ main {
         position: relative;
         &::before {
             content: '';
-            background-image: url(/homeworks/homeworks11/assets/Photos/left-arrow.png);
+            background-image: url(assets/Photos/left-arrow.png);
             height: 22px;
             width: 13px;
             position: absolute;
@@ -218,7 +218,7 @@ main {
 
         &::before {
             content: '';
-            background-image: url(/homeworks/homeworks11/assets/Photos/left-arrow.png);
+            background-image: url(assets/Photos/left-arrow.png);
             transform: rotate(180deg);
             height: 22px;
             width: 13px;
