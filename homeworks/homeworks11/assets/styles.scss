@@ -5,19 +5,20 @@ $icon_color: #CCCCCC;
 $text_color: #333333;
 
 @font-face {
-    font-family: 'Open Sans', sans-serif;
-    src: url(/homeworks/homeworks11/assets/Fonts/OpenSans-Bold.ttf)
+    font-family: Roboto;
+    src: url(/homeworks/homeworks11/assets/Fonts/Roboto-Black.ttf);
 }
 
 @font-face {
-    font-family: 'Raleway', sans-serif;
+    font-family: Raleway;
     src: url(/homeworks/homeworks11/assets/Fonts/Raleway-Medium.ttf);
     src: url(/homeworks/homeworks11/assets/Fonts/Raleway-Regular.ttf);
 }
 
 @font-face {
-    font-family: 'Roboto', sans-serif;
-    src: url(/homeworks/homeworks11/assets/Fonts/Roboto-Black.ttf);
+    font-family: 'Open Sans';
+    src: url(/homeworks/homeworks11/assets/Fonts/OpenSans-Bold.ttf);
+
 }
 
 $base_fz: 16;
@@ -29,7 +30,6 @@ $base_fz: 16;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family:'Inter', sans-serif;
 }
 
 html, body {
@@ -48,33 +48,42 @@ a:hover {
 }
 
 body{
-    padding: 110px 391.03px 83px;
+    padding: 110px 445px 0px;
     background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    p{
-        font-family: 'Raleway';
-        font-weight: 500;
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-        text-transform: uppercase;
-        color: $sub_title;
-        padding-bottom: 15px;
+    justify-content: space-between;
+    width: 100%;
+    max-height: 157px;
+    height: 100%;
+    text-align: center;
+    .title {
+        p{
+            font-family: 'Raleway';
+            font-weight: 500;
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            text-transform: uppercase;
+            color: $sub_title;
+            padding-bottom: 15px;
+        }
+        h1 {
+            color: $gold_color;
+            font-family: 'Roboto';
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 3.75rem;
+            line-height: 4.125rem;
+        }
     }
-    h1 {
-        color: $gold_color;
-        font-family: 'Roboto';
-        font-weight: 900;
-        text-transform: uppercase;
-        font-size: 3.75rem;
-        line-height: 4.125rem;
-        padding-bottom: 50px;
-    }
-    div {
+    .header_border {
         display: flex; 
         flex-direction: row;
         justify-content: space-between;
@@ -90,12 +99,23 @@ header {
     }
 }
 
+section {
+    max-width: 430px;
+    max-height: 430px;
+    height: 100%;
+    width: 100%;
+}
+
 main {
     display: flex;
     padding-top: 105px;
     position: relative;
+    justify-content: space-between;
+    min-height: 610px;
+    height: 100%;
+    max-width: 1150px;
+    width: 100%;
     .section_left {
-        padding-right: 93px;
         position: relative;
         &::before {
             content: '';
@@ -103,8 +123,8 @@ main {
             height: 22px;
             width: 13px;
             position: absolute;
-            left: -20px;
-            top: 310px;
+            left: -56px;
+            top: 195px;
         }
         div {
             height: 0;
@@ -185,8 +205,8 @@ main {
         border: 1px solid $gold_color;
         transform: rotate(90deg);
         position: absolute;        
-        top: 310px;
-        left: 290px;
+        top: 321px;
+        left: 235px;
     }
 
     .section-right {
@@ -195,7 +215,7 @@ main {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-left: 92px;
+
         &::before {
             content: '';
             background-image: url(/homeworks/homeworks11/assets/Photos/left-arrow.png);
@@ -203,43 +223,53 @@ main {
             height: 22px;
             width: 13px;
             position: absolute;
-            left: 500px;
+            left: 470px;
             top: 195px;
         }
-        .section-right_title {
-            color: $gray_color;
-            font-family: 'Roboto';
-            font-weight: 900;
-            font-size: 2.25rem;
-            line-height: 2.65rem;
-            padding-bottom: 30px;
-        }
-        .section-right_sub-title {
-            padding: 30px 0;
-            color: $gray_color;
-            font-family: 'Raleway';
-            font-weight: 400;
-            font-size: 1.5rem;
-            line-height: 2.2rem;
-        }
-        div {
-            height: 0;
-            max-width: 100px;
-            width: 100%;
-            border: 1px solid $gold_color;
-        }
-        .social {
-            max-width: 135px;
-            height: 30px;
-            width: 100%;
-            border: none;
-            padding-bottom: 49px;
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            .section-right_title {
+                color: $gray_color;
+                font-family: 'Roboto';
+                font-weight: 900;
+                font-size: 2.25rem;
+                line-height: 2.65rem;
+                // padding: 0px 0px 23px;
+            }
+            .section-right_sub-title {
+                color: $gray_color;
+                font-family: 'Raleway';
+                font-weight: 400;
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+                // padding: 20px 0 15px;
+            }
+            div {
+                height: 0;
+                max-width: 100px;
+                width: 100%;
+                border: 1px solid $gold_color;
+            }
+            .social {
+                max-width: 135px;
+                height: 30px;
+                width: 100%;
+                border: none;
+                // padding-top: 15px;
+            }
+            p {
+                padding: 0;
+            }
         }
         p{
+            padding-top: 50px;
             font-family: 'Raleway';
             font-weight: 500;
             color: $text_color;
-            padding-bottom: 20px;
+            padding-bottom: 5px;
         }
         button {
             text-transform: uppercase;
@@ -253,7 +283,43 @@ main {
             height: 24px;
             max-width: 118px;
             width: 100%;
-            margin-top: 25px;
+
+        }
+        .section-second_decoration {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            padding: 20px 0;
+            .small-line {
+                width: 10px;
+                height: 4px;
+                background-color: $gold_color;
+            }
+            .big-line {
+                width: 20px;
+                height: 4px;
+                background-color: $gold_color;
+                margin: 0px 5px;
+            }
+        }
+    }
+    .page_wrapper {
+        display: flex; 
+        align-self: flex-end;
+        margin-bottom: 18px;
+        gap: 10px;
+        div {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .fill {
+            background-color: $gold_color;
+        }
+        .choose {
+            border: 1px solid $gold_color;
+            background-color: #fff;
         }
     }
 }
