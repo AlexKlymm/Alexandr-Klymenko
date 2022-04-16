@@ -7,6 +7,10 @@ $active_color: #007BFF;
     src: url(/assets/Fonts/Inter-Regular.ttf);
 }
 
+$base_fz: 16;
+@mixin fz($size_in_px){
+  font-size:($size_in_px/$base_fz)+rem;
+}
 
 *, *::after, *::before {
     padding: 0;
