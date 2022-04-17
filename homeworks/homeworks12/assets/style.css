@@ -1,7 +1,16 @@
+@font-face {
+  font-family: Roboto;
+  src: url(fonts/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url(fonts/NunitoSans-SemiBold.ttf);
+}
 *, *::after, *::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: Roboto;
 }
 
 html, body {
@@ -18,13 +27,205 @@ a:hover {
   text-decoration: underline;
 }
 
-body {
-  padding: 156px;
+footer {
+  padding: 0 142.5px;
 }
 
-header {
-  max-width: 1115px;
+img {
+  z-index: 2;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 38px;
+}
+body header {
+  max-width: 1155px;
   width: 100%;
   height: 80px;
+  border-bottom: 1px solid #E5EAF4;
+  margin-bottom: 55px;
+}
+body main {
+  max-width: 1155px;
+  width: 100%;
+  max-height: 470px;
+  height: 100%;
+}
+body main .title p {
+  text-transform: uppercase;
+  color: #7690A8;
+  font-family: Roboto;
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 17px;
+}
+body main .title h1 {
+  font-size: 40px;
+  line-height: 52px;
+  font-family: "Nunito Sans";
+  color: #16133D;
+}
+body main section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+  width: 100%;
+}
+body main section article {
+  max-width: 360px;
+  height: 347px;
+  width: 100%;
   border: 1px solid #E5EAF4;
+  border-radius: 8px;
+  padding: 41px 45px 45px 41px;
+}
+body main section article h5 {
+  font-size: 24px;
+  line-height: 21.28px;
+}
+body main section article p {
+  margin: 14px 0 29px;
+  line-height: 28px;
+  font-size: 16px;
+}
+body main section article:hover {
+  border: 1px solid #3DB370;
+}
+body main section article:hover div {
+  border: 1px solid #3DB370;
+}
+body main section article:hover div img {
+  opacity: 0;
+}
+body main section article div {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  border: 1px solid #E5EAF4;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main section article .icon_container-design {
+  position: relative;
+}
+body main section article .icon_container-design::before {
+  content: "";
+  background-image: url(photos/Design-icon-active.svg);
+  width: 39px;
+  height: 35px;
+  z-index: 1;
+  position: absolute;
+}
+body main section article .icon_container-ecommerce {
+  position: relative;
+}
+body main section article .icon_container-ecommerce::before {
+  content: "";
+  background-image: url(photos/Ecommerce-icon-active.svg);
+  width: 39px;
+  height: 36px;
+  z-index: 1;
+  position: absolute;
+}
+body main section article .icon_container-application {
+  position: relative;
+}
+body main section article .icon_container-application::before {
+  content: "";
+  background-image: url(photos/Application-icon-active.svg);
+  width: 25px;
+  height: 36px;
+  z-index: 1;
+  position: absolute;
+}
+body footer {
+  background-color: #16133D;
+  width: 100%;
+  height: 194px;
+  margin-top: 69px;
+}
+body footer .logo {
+  padding-top: 36px;
+}
+body footer .social {
+  display: flex;
+  margin-top: 40px;
+}
+body footer .social .icon_item {
+  width: 38px;
+  height: 38px;
+  border-radius: 5px;
+  background-color: #EFEEF3;
+  margin: 4px;
+}
+body footer .social .icon_item:hover img {
+  opacity: 0;
+}
+body footer .social .icon_item a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body footer .social .instagram-item {
+  position: relative;
+}
+body footer .social .instagram-item a::before {
+  content: "";
+  background-image: url(photos/instagram-active.svg);
+  z-index: 1;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+body footer .social .facebook-item {
+  position: relative;
+}
+body footer .social .facebook-item a::before {
+  content: "";
+  background-image: url(photos/facebook-active.svg);
+  z-index: 1;
+  position: absolute;
+  width: 10px;
+  height: 18.67px;
+}
+body footer .social .github-item {
+  position: relative;
+}
+body footer .social .github-item a::before {
+  content: "";
+  background-image: url(photos/github-active.svg);
+  z-index: 1;
+  position: absolute;
+  width: 20px;
+  height: 19.5px;
+}
+body footer .social .behance-item {
+  position: relative;
+}
+body footer .social .behance-item a::before {
+  content: "";
+  background-image: url(photos/behance-active.svg);
+  z-index: 1;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+}
+body footer .social .twitter-item {
+  position: relative;
+}
+body footer .social .twitter-item a::before {
+  content: "";
+  background-image: url(photos/twitter-active.svg);
+  z-index: 1;
+  position: absolute;
+  width: 20px;
+  height: 16px;
 }

@@ -1,14 +1,22 @@
 $border_color: #E5EAF4;
+$sub_title: #7690A8;
+$text_color: #16133D;
 
-$base_fz: 16;
-@mixin fz($size_in_px){
-  font-size:($size_in_px/$base_fz)+rem;
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Nunito Sans';
+    src: url(fonts/NunitoSans-SemiBold.ttf);
 }
 
 *, *::after, *::before {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Roboto;
 }
 
 html, body {
@@ -26,16 +34,224 @@ a:hover {
     text-decoration: underline;
 }
 
-body {
-    padding: 156px;
+footer {
+    padding: 0 142.5px;
+
 }
 
-header {
-    max-width: 1115px;
-    width: 100%;
-    height: 80px;
-    border: 1px solid $border_color;
-    div {
-        
+img {
+    z-index: 2;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 38px;
+    header {
+        max-width: 1155px;
+        width: 100%;
+        height: 80px;
+        border-bottom: 1px solid $border_color;
+        margin-bottom: 55px;
+    }
+    main {
+        max-width: 1155px;
+        width: 100%;
+        max-height: 470px;
+        height: 100%;
+        .title {
+            p {
+                text-transform: uppercase;
+                color: $sub_title;
+                font-family: Roboto;
+                font-size: 16px;
+                line-height: 21px;
+                margin-bottom: 17px;
+            }
+            h1 {
+                font-size: 40px;
+                line-height: 52px;
+                font-family: 'Nunito Sans';
+                color: #16133D;
+            }
+        }
+        section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 35px;
+            width: 100%;
+            article {
+                max-width: 360px;
+                height: 347px;
+                width: 100%;
+                border: 1px solid $border_color;
+                border-radius: 8px;
+                padding: 41px 45px 45px 41px;
+                h5 {
+                    font-size: 24px;
+                    line-height: 21.28px;
+                }
+                p {
+                    margin: 14px 0 29px;
+                    line-height: 28px;
+                    font-size: 16px;
+                }
+                &:hover {
+                    border: 1px solid #3DB370;
+                    div {
+                        border: 1px solid #3DB370;
+                        img {
+                            opacity: 0;
+                        }
+                    }
+                }
+                div {
+                    width: 64px;
+                    height: 64px;
+                    border-radius: 16px;
+                    border: 1px solid $border_color;
+                    margin-bottom: 28px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .icon_container-design {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        background-image: url(photos/Design-icon-active.svg);
+                        width: 39px;
+                        height: 35px;
+                        z-index: 1;
+                        position: absolute;
+                    }
+                }
+                .icon_container-ecommerce {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        background-image: url(photos/Ecommerce-icon-active.svg);
+                        width: 39px;
+                        height: 36px;
+                        z-index: 1;
+                        position: absolute;
+                    }
+                }
+                .icon_container-application {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        background-image: url(photos/Application-icon-active.svg);
+                        width: 25px;
+                        height: 36px;
+                        z-index: 1;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: $text_color;
+        width: 100%;
+        height: 194px;
+        margin-top: 69px;
+        .logo {
+            padding-top: 36px;
+        }
+
+        .social {
+            display: flex;
+            margin-top: 40px;
+            .icon_item {
+                width: 38px;
+                height: 38px;
+                border-radius: 5px;
+                background-color: #EFEEF3;
+                margin: 4px;
+                &:hover {
+                    img {
+                        opacity: 0;
+                    }
+                }
+                a {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+            .instagram-item {
+                position: relative;
+                a {
+                    &::before {
+                        content: '';
+                        background-image: url(photos/instagram-active.svg);
+                        z-index: 1;
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+            .facebook-item {
+                position: relative;
+                a {
+                    &::before {
+                        content: '';
+                        background-image: url(photos/facebook-active.svg);
+                        z-index: 1;
+                        position: absolute;
+                        width: 10px;
+                        height: 18.67px;
+                    }
+                }
+            }
+            .github-item {
+                position: relative;
+                a {
+                    &::before {
+                        content: '';
+                        background-image: url(photos/github-active.svg);
+                        z-index: 1;
+                        position: absolute;
+                        width: 20px;
+                        height: 19.5px;
+                    }
+                }
+            }
+            .behance-item {
+                position: relative;
+                a {
+                    &::before {
+                        content: '';
+                        background-image: url(photos/behance-active.svg);
+                        z-index: 1;
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+            .twitter-item {
+                position: relative;
+                a {
+                    &::before {
+                        content: '';
+                        background-image: url(photos/twitter-active.svg);
+                        z-index: 1;
+                        position: absolute;
+                        width: 20px;
+                        height: 16px;
+                    }
+                }
+            }
+        }
     }
 }
+
+
+

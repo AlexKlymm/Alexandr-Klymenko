@@ -243,3 +243,7 @@
     border: 1px solid #BCD0E5;
     margin-top: 170px;
 }
+a {
+    color: inherit;
+    text-decoration: none;
+}
