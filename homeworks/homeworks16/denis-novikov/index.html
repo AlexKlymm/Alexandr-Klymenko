@@ -9,46 +9,64 @@
 </head>
     <body>
         <header>
-            <nav>
+            <nav id="menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About me</a></li>
-                    <li><a href="#">Skills</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#Home" >Home</a></li>
+                    <li><a href="#About_me">About me</a></li>
+                    <li><a href="#Skills">Skills</a></li>
+                    <li><a href="#Portfolio">Portfolio</a></li>
+                    <li><a href="#Contacts">Contacts</a></li>
                 </ul>
             </nav>
         </header>
-        <main>
-            <section>
-                <h3>Denis Novik</h3>
+        <main id="Home">
+            <section class="section_main">
+                <h1>Denis Novik</h1>
                 <div class="pic">
                     <img src="assets/Photos/Portfolio-photo.svg" alt="protfolio photo">
                 </div>
             </section>
-            <section class="container-about-me">
+            <section class="section_about-me" id="About_me">
                 <h3>About me</h3>
                 <p>
                     Hi, I'm Denis – UX/UI designer from Minsk. 
+                </p>
+                <p>
                     I'm interested in design and everything connected with it.
                 </p>
+                <br>
+
                 <p>
                     I'm studying at courses "Web and mobile 
-                    design interfaces" in IT-Academy. 
                 </p>
                 <p>
-                    Ready to implement excellent projects with wonderful people.
+                    design interfaces" in IT-Academy. 
+                </p>
+                <br>
+
+                <p>
+                    Ready to implement excellent projects 
+                </p>
+                <p>
+                    with wonderful people.
+
                 </p>
             </section>
-            <section>
-                <h3>Skills</h3>
-                <p>I work in such programs as</p>
+            <section class="section_skills" id="Skills">
                 <div>
-                    <div>
-                        <div class="pic">
+                    <h3>Skills</h3>
+                    <p>I work in such programs as</p>
+                </div>
+                <div class="container_skills">
+                    <div class="skill_item">
+                        <div class="skills_icon">
                             <img src="assets/Photos/Adobe-Photoshop.svg" alt="Adobe Photoshop"> 
                         </div>
-                        <p></p>
+                        <p>
+                            Adobe 
+                            <br>
+                            Photoshop
+                        </p>
                         <div class="container_stars">
                             <div class="star_item">
                                 <img src="assets/Photos/Star-full.svg" alt="star">
@@ -59,11 +77,15 @@
                             </div>
                         </div> 
                     </div>
-                    <div>
-                        <div class="pic">
+                    <div class="skill_item">
+                        <div class="skills_icon">
                             <img src="assets/Photos/Adobe-Illustrator.svg" alt="Adobe Illustrator"> 
                         </div>
-                        <p></p>
+                        <p>
+                            Adobe 
+                            <br>
+                            Illustrator
+                        </p>
                         <div class="container_stars">
                             <div class="star_item">
                                 <img src="assets/Photos/Star-full.svg" alt="star">
@@ -74,9 +96,15 @@
                             </div>
                         </div> 
                     </div>
-                    <div>
-                        <img src="assets/Photos/Adobe-After-Effects.svg" alt="Adobe After Effects"> 
-                        <p></p>
+                    <div class="skill_item">
+                        <div class="skills_icon">
+                            <img src="assets/Photos/Adobe-After-Effects.svg" alt="Adobe After Effects"> 
+                        </div>
+                        <p>
+                            Adobe 
+                            <br>
+                            After Effects
+                        </p>
                         <div class="container_stars">
                             <div class="star_item">
                                 <img src="assets/Photos/Star-full.svg" alt="star">
@@ -87,9 +115,11 @@
                             </div>
                         </div> 
                     </div>
-                    <div>
-                        <img src="assets/Photos/Figma.svg" alt="Figma"> 
-                        <p></p>
+                    <div class="skill_item">
+                        <div class="skills_icon">
+                            <img src="assets/Photos/Figma.svg" alt="Figma"> 
+                        </div>
+                        <p>Figma</p>
                         <div class="container_stars">
                             <div class="star_item">
                                 <img src="assets/Photos/Star-full.svg" alt="star">
@@ -102,8 +132,8 @@
                     </div>
                 </div>
             </section>
-            <section class="conteiner-portfolio">
-                <h1>Portfolio</h1>
+            <section class="section_portfolio" id="Portfolio">
+                <h3>Portfolio</h3>
                 <div class="pic">
                     <img src="assets/Photos/Fashion-store.svg" alt="fashion store">
                 </div>
@@ -118,31 +148,34 @@
                 <a href="#">Braun Landing Page - Concept</a>
             </section>
         </main>
-        <footer>
-            <h3>Contacts</h3>
-            <p>
-                Want to know more or just chat? 
-                You are welcome!
-            </p>
-            <button href="#"></button>
-            <div class="socials">
-                <a href="">
-                    <img src="" alt="">
-                </a>
-                <a href="">
-                    <img src="" alt="">
-                </a>
-                <a href="">
-                    <img src="" alt="">
-                </a>
-                <a href="">
-                    <img src="" alt="">
-                </a>
+        <footer id="Contacts">
+            <div>
+                <h3>Contacts</h3>
+                <p>
+                    Want to know more or just chat? 
+                    <br>
+                    You are welcome!
+                </p>
+                <button type="submit">Send message</button>
+                <div class="socials">
+                    <a href="https://www.linkedin.com/">
+                        <img src="assets/Photos/linkedin-icon.svg" alt="linkedin">
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <img src="assets/Photos/instagram-icon.svg" alt="instagram">
+                    </a>
+                    <a href="https://www.behance.com/">
+                        <img src="assets/Photos/behance-icon.svg" alt="behance">
+                    </a>
+                    <a href="https://www.dribble.com/">
+                        <img src="assets/Photos/dribble-icon.svg" alt="dribble">
+                    </a>
+                </div>
+                <p>
+                    Like me on
+                    LinkedIn, Instagram, Behance, Dribble
+                </p>
             </div>
-            <p>
-                Like me on
-                LinkedIn, Instagram, Behance, Dribble
-            </p>
         </footer>
     </body>
 </html>
