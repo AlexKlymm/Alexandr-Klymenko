@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: 
+Sitemap: https://alexklymm.github.io/Alexandr-Klymenko/homeworks/homeworks24/sitemap.xml
