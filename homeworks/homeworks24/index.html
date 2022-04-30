@@ -467,7 +467,7 @@
     import Swiper from 'https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js'
 
     const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1.7,
+        slidesPerView: 2,
         spaceBetween: 30,
         pagination: {
             el: ".swiper-pagination",
@@ -479,13 +479,19 @@
         },
         breakpoints: {
             768: {
-                slidesPerView: 1,
-                spaceBetween: 20,
+                slidesPerView: 1.7,
+                spaceBetween: 30,
+            },
+        },
+        breakpoints: {
+            568: {
+                slidesPerView: 1.5,
+                spaceBetween: 30,
             },
         },
         breakpoints: {
             320: {
-                slidesPerView: 0.9,
+                slidesPerView: .8,
                 spaceBetween: 30,
             },
         }
