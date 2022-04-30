@@ -1,0 +1,473 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "PoppinsRegular";
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1 {
+  font-size: 44px;
+  line-height: 52px;
+}
+
+h1,
+h2 {
+  color: #fff;
+}
+
+h3 {
+  font-family: "Playfair Display";
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 48px;
+  color: #ffffff;
+}
+
+span {
+  color: #689ff2;
+  font-style: italic;
+}
+
+.white {
+  font-size: 20px;
+  line-height: 20px;
+  color: #fff;
+  font-style: italic;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  position: relative;
+  background-position: 10px;
+  z-index: 1;
+  color: #53f3cd;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Lato";
+}
+button::before {
+  content: "";
+  width: 100%;
+  height: 13px;
+  background-color: #53f3cd;
+  opacity: 0.3;
+  position: absolute;
+  top: 11px;
+  left: 10px;
+  z-index: -2;
+  transition: 0.7s all ease;
+}
+button::after {
+  content: "";
+  width: 0;
+  height: 13px;
+  background-color: #689ff2;
+  opacity: 0.3;
+  position: absolute;
+  top: 11px;
+  left: -10px;
+  z-index: -1;
+  transition: 0.7s all ease;
+}
+button:hover {
+  transition: 0.7s all ease;
+  color: #3de48b;
+}
+button:hover::before {
+  background-color: #3de48b;
+}
+button:focus {
+  color: #a8c7f4;
+}
+button:focus::after {
+  width: 100%;
+  transform: translate(20%, 15%);
+}
+button:focus::before {
+  transform: translate(20%, 15%);
+  width: 0;
+}
+
+.pic img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  vertical-align: top;
+}
+
+body {
+  background-image: url(photos/first-screen-image.png);
+  background-size: 100%;
+  background-color: #161926;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 28px;
+  color: #ced0d3;
+  font-size: 18px;
+  line-height: 26px;
+}
+body header {
+  padding: 0 64px;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  backdrop-filter: blur(4px);
+  z-index: 1;
+  top: 0;
+}
+body header div {
+  display: flex;
+  align-items: center;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main section {
+  padding: 0 64px;
+  width: 100%;
+  display: flex;
+}
+body main .main-section {
+  max-width: 1160px;
+}
+body main .main-section div {
+  padding: 158px 0;
+  max-width: 566px;
+  width: 100%;
+  height: 100%;
+}
+body main .main-section div p {
+  padding: 24px 0 48px;
+}
+body main .about_us {
+  display: flex;
+  align-items: center;
+}
+body main .about_us .pic_about-us {
+  z-index: -2;
+}
+body main .about_us .content-block {
+  max-width: 761px;
+  width: 100%;
+  max-height: 570px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -5px;
+  margin-left: -175px;
+  background-color: rgba(22, 25, 38, 0.9);
+}
+body main .about_us .content-block .div_border {
+  width: 82px;
+  height: 1px;
+  background-color: #689ff2;
+}
+body main .about_us .content-block .content-block_left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-left: 52px;
+  padding-right: 70px;
+}
+body main .about_us .content-block .content-block_left p {
+  padding: 12px 0 50px;
+  color: #262a3f;
+}
+body main .about_us .content-block .content-block_left h2 {
+  padding-top: 12px;
+  font-size: 68px;
+  line-height: 72px;
+  font-family: "Playfair Display";
+  font-weight: normal;
+  color: #fff;
+}
+body main .about_us .content-block .content-block_left .padding_h2 {
+  padding-top: 42px;
+}
+body main .about_us .content-block .content-block_right {
+  padding: 54px 11px 52px 18px;
+  max-width: 360px;
+}
+body main .about_us .content-block .content-block_right .text_padding {
+  padding-top: 15px;
+  padding-bottom: 42px;
+}
+body main .about-us_descr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main .about-us_descr .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1086px;
+  width: 100%;
+  margin: 0 43px;
+  padding-top: 130px;
+}
+body main .about-us_descr .container .box_border-top {
+  border-top: 1px solid #515773;
+  max-width: 500px;
+  width: 100%;
+  height: 304px;
+  padding-top: 32px;
+  margin-bottom: 36px;
+}
+body main .about-us_descr .container .box_border-top p {
+  padding-top: 24px;
+}
+body main .about-us_descr .quote_about-us {
+  margin-top: 30px;
+  margin-bottom: 121px;
+  background-image: url(photos/quote-background.svg);
+  max-width: 1152px;
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 101px 0 101px 129px;
+}
+body main .about-us_descr .quote_about-us::before {
+  content: "";
+  background-image: url(photos/quote-icon.svg);
+  width: 100px;
+  height: 81px;
+  position: absolute;
+  top: 70px;
+  left: 70px;
+}
+body main .about-us_descr .quote_about-us .text_wrapper {
+  margin-bottom: 40px;
+}
+body main .about-us_descr .quote_about-us .text_wrapper p {
+  font-family: "Lato";
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 46px;
+  color: #fff;
+}
+body main .video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+}
+body main .video h3 {
+  padding-top: 55px;
+}
+body main .video .text_video-section {
+  padding-top: 20px;
+}
+body main .section-trade {
+  display: flex;
+  align-items: center;
+}
+body main .section-trade .bg-image_trade {
+  background-image: url(photos/features-background-image.svg);
+  width: 100%;
+  max-width: 566px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 104px 250px 105px 76px;
+}
+body main .section-trade .bg-image_trade .trade_container-exchange {
+  background: #161926;
+  padding: 23px 21px 16px 19px;
+  height: 331px;
+  width: 240px;
+}
+body main .section-trade .bg-image_trade .trade_container-exchange .border-bottom {
+  width: 100%;
+  border-bottom: 1px solid #2d303c;
+}
+body main .section-trade .bg-image_trade .trade_container-exchange .border-bottom select {
+  background-color: #161926;
+  border: none;
+  text-decoration: none;
+}
+body main .section-trade .bg-image_trade .trade_container-exchange .trade_coins div {
+  display: inline;
+  position: relative;
+}
+body main .section-trade .bg-image_trade .trade_container-exchange .trade_coins div::before {
+  content: "";
+  background-image: url(photos/arrow-trade.svg);
+  position: absolute;
+  width: 12px;
+  height: 11px;
+}
+body main .section-trade .bg-image_trade .trade_container-wallet {
+  background: #161926;
+  padding: 23px 21px 16px 19px;
+  height: 331px;
+  width: 240px;
+  display: none;
+}
+body main .section-trade .trade_descr {
+  width: 100%;
+  max-width: 761px;
+  height: 100%;
+  max-height: 452px;
+  position: relative;
+  margin-left: -175px;
+  bottom: -5px;
+  z-index: 1;
+  padding: 72px 18px 72px 64px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(22, 25, 38, 0.9);
+}
+body main .section-trade .trade_descr .left-side_descr,
+body main .section-trade .trade_descr .right-side_descr {
+  display: flex;
+  flex-direction: column;
+}
+body main .section-trade .trade_descr .left-side_descr {
+  padding-right: 95px;
+}
+body main .section-trade .trade_descr .left-side_descr .padding {
+  margin-top: 66px;
+}
+body main .section-trade .trade_descr .descr p {
+  padding-top: 10px;
+}
+body main .section-trade .trade_descr button {
+  border: 1px solid #515773;
+  padding: 35px 100px 39px 93px;
+  margin-top: 101px;
+}
+body main .section-trade .trade_descr button::before, body main .section-trade .trade_descr button::after {
+  content: "";
+  top: 45px;
+  left: 103px;
+}
+body main .section-trade .trade_descr button::before {
+  width: 112px;
+}
+body main .section-trade .trade_descr button:hover {
+  border: 1px solid #3de48b;
+}
+body main .section-trade .trade_descr button:focus {
+  border: 1px solid #689ff2;
+}
+body main .section-trade .trade_descr button:focus::after {
+  width: 102px;
+  transform: translate(20%, 15%);
+}
+body main .section-trade .trade_descr button:focus::before {
+  width: 0;
+  transform: translate(20%, 15%);
+}
+body main .client-reviews_section {
+  display: flex;
+  flex-direction: row;
+  margin-top: 151px;
+  padding-right: 0;
+  margin-bottom: 196px;
+  overflow: hidden;
+}
+body main .client-reviews_section .client-reviews_descr {
+  margin-right: 55px;
+  padding-left: 2px;
+  max-width: 328px;
+  width: 100%;
+}
+body main .client-reviews_section .client-reviews_descr h3 {
+  padding-bottom: 20px;
+}
+body main .client-reviews_section .client-reviews_descr .reviews_slider {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 133px;
+}
+body main .client-reviews_section .client-reviews_descr .arrow-clients_back::before, body main .client-reviews_section .client-reviews_descr .arrow-clients_back::after,
+body main .client-reviews_section .client-reviews_descr .arrow-clients_farther::before,
+body main .client-reviews_section .client-reviews_descr .arrow-clients_farther::after {
+  display: none;
+}
+body main .client-reviews_section .client-reviews_descr .arrow-clients_farther {
+  transform: rotateY(180deg);
+}
+body main .client-reviews_section .client-reviews_block {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+body main .client-reviews_section .client-reviews_block .client-reviews_content-first,
+body main .client-reviews_section .client-reviews_block .client-reviews_content-second {
+  padding: 48px;
+  max-width: 468px;
+  width: 100%;
+  height: 333px;
+  position: relative;
+}
+body main .client-reviews_section .client-reviews_block .client-reviews_content-first p.white,
+body main .client-reviews_section .client-reviews_block .client-reviews_content-second p.white {
+  position: absolute;
+  bottom: 48px;
+}
+body main .client-reviews_section .client-reviews_block .client-reviews_content-first {
+  background-image: url(photos/client-reviews.svg);
+  margin-right: 20px;
+}
+body main .client-reviews_section .client-reviews_block .client-reviews_content-second {
+  background-image: url(photos/client-reviews-second.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  max-width: 454px;
+}
+body footer {
+  display: flex;
+  max-width: 1152px;
+  border-top: 1px solid #515773;
+  border-bottom: 1px solid #515773;
+  margin: 0 auto;
+}
+body footer .footer_content {
+  display: flex;
+  flex-direction: column;
+}
+body footer .footer_content .contact {
+  margin-top: 120px;
+}
