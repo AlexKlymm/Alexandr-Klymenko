@@ -366,10 +366,19 @@ main {
   display: flex;
   justify-content: space-between;
 }
+.radio-container div .radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.radio-container div .radio .margin-debug {
+  margin-left: 5px;
+}
 .radio-container div .radio label {
-  margin: 0 15px;
+  margin: 0 5px;
 }
 .radio-container div .radio input {
+  color: #CED0D3;
   position: absolute;
   opacity: 0;
 }
@@ -380,15 +389,18 @@ main {
   border: 4px solid #161926;
   outline: 3px solid #fff;
   display: inline-block;
-  padding: 4px;
+  padding: 3px;
   cursor: pointer;
   transition: all 250ms ease;
   opacity: 0;
   position: relative;
-  right: 15px;
+  right: 10px;
 }
 .radio-container div .radio input:checked + .radio-label:before {
   opacity: 1;
+}
+.radio-container div .radio input:focus + .radio-label {
+  color: #fff;
 }
 .radio-container div .radio input:focus + .radio-label:before {
   opacity: 1;
