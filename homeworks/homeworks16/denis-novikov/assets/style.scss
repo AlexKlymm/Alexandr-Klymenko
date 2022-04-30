@@ -239,6 +239,9 @@ footer {
 }
 
 @media screen and (max-width: 445px) {
+    .main_section {
+        display: block;
+    }
     .section_skills {
         justify-content: center;
     }
