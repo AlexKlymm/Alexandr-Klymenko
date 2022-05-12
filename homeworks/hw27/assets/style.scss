@@ -1,0 +1,38 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    color: rgb(53, 40, 40);
+}
+
+.container {
+    max-width: 80%;
+    width: 100%;
+    border: 2px double white;
+    box-shadow: 0px 1px 30px 0px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+}
+
+.content {
+    margin: 15px;
+    border: 1px solid rgb(182, 182, 182);
+    padding: 5px;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    border: none;
+    background-color: rgb(164, 240, 240);
+    cursor: pointer;
+    &:hover {
+        background-color: rgb(85, 199, 199);
+        transition: .5s all ease;
+    }
+}
