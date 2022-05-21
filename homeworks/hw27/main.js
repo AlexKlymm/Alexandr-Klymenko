@@ -1,5 +1,6 @@
-const nameQeustion = prompt('Як тебе звати, друже?');
-const userName = nameQeustion;
+const nameQuestion = prompt('Як тебе звати, друже?');
+const userName = nameQuestion;
+
 alert(`Привіт! ${userName}`);
 
 const birthDay = parseInt(prompt('Вкажи рік у якому ти народився(лась)'));
@@ -26,7 +27,7 @@ alert(`Тобі потрібно їхати ${kmPerHour} км у годину ч
 alert('А зараз ми порахуємо скільки долларів ти зможешь перевести у євро!');
 const howManyUSD = parseInt(prompt('Скільки долларів хотів(ла) би ти перевести у євро?'));
 const EUR = 0.94;
-const euroUser = EUR * howManyUSD;
+const euroUser = (EUR * howManyUSD).toFixed(2);
 alert(`Наразі це буде: ${euroUser} евро`);
 
 alert(`${userName}, дякую тобі за увагу! Нехай тобі сонечко світить!`)

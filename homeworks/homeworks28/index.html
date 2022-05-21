@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+    <body>
+
+     <div class="container pt-4">
+         <div class="card mb-4">
+             <div class="card-body">
+                 <div class="row">
+                     <div class="col-4">
+                        <p>1) Вывести # столько раз, сколько указал пользователь.
+                        </p>
+                     </div>
+                     <div class="col-4">
+                        <input type="number0"  id="task_1_number" class="me-3">
+                        <button 
+                        type="button" class="btn btn-info" onclick="task1()">
+                        click
+                        </button>
+                     </div>
+                     <div class="col-4">
+                        <div id="task_1_result"></div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                           Пользователь ввел число, 
+                           а на экран вывелись все числа от введенного до 0.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="task_2_number" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="task2()">
+                       numbers
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="task_2_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Запросить 2 числа и найти все общие делители.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="task_4_number1" class="me-3">
+                       <input type="number"  id="task_4_number2" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="task4()">
+                       numbers
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="task_4_result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-4">
+        <h3>Самостійна робота</h3>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Подсчитать сумму всех чисел в 
+                        заданном пользователем диапазоне.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="sumNumber__Input--1" class="me-3">
+                       <input type="number"  id="sumNumber__Input--2" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="numbersSum()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="sumNumber__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Запросить 2 числа и найти 
+                        только наибольший общий делитель.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="divideNumber__Input--1" class="me-3">
+                       <input type="number"  id="divideNumber__Input--2" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="divideNumber()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="divideNumber__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-4">
+                   <p>
+                    Определить количество цифр в введенном числе.
+                   </p>
+                </div>
+                <div class="col-4">
+                   <input type="number"  id="divideNumber__Input--1" class="me-3">
+                   <input type="number"  id="divideNumber__Input--2" class="me-3">
+                   <button 
+                   type="button" class="btn btn-info" onclick="divideNumber()">
+                   CLICK!
+                   </button>
+                </div>
+                <div class="col-4">
+                    <p>Result:</p>
+                   <div id="divideNumber__Result"></div>
+                </div>
+            </div>
+        </div>
+     </div>
+    </body>
+<script src="main.js"></script>
+</html>
