@@ -258,11 +258,93 @@ function viewCartTable() {
         html += `
         <tr>
             <td>${product.name}</td>
-            <td>${product.qty}</td>
+            <td>
+            <button class="btn btn-info btn-sm" onclick="changeProductlyQTY('${product.name}', 'dec')">-</button>
+            ${product.qty}
+            <button class="btn btn-info btn-sm" onclick="changeProductlyQTY('${product.name}', 'inc')">+</button>
+            </td>
             <td>${product.price.toFixed(2)}</td>
             <td>${product.total.toFixed(2)}</td>
         </tr>
         `;
     });
     document.getElementById('cart-tbody').innerHTML = html;
+    document.getElementById('cart-total').innerText = (sumTotal()).toFixed(2);
 } 
+
+function changeProductlyQTY(name, action) {
+    // debugger;
+    const index = CART.findIndex(el => el.name === name);
+    let newQty = 0;
+    if (action === 'inc') {
+        newQty = CART[index].qty + 1;
+    } else {
+        if(CART[index].qty >= 2) {
+            newQty = CART[index].qty - 1;
+        } else {
+            askProductDelete(name);
+            return false;
+        }
+    }
+    CART[index].qty = newQty;
+    CART[index].total = CART[index].price * newQty;
+    viewCartTable();
+}
+
+function askProductDelete(name) {
+    return confirm('Delete product? '+name+'?');
+}
+
+function sumTotal () {
+    return CART.reduce((acc, curr) => {return acc + curr.total;}, 0);
+}
+
+const DISCOUNT = [
+    {
+        promo: 'qwe',
+        type: 'fixed', // or 'percent',
+        value: 15,
+        isUsed: false
+    },
+    {
+        promo: 'qwert',
+        type: 'percent',
+        value: 5,
+        isUsed: false
+    }
+
+]
+
+function checkAndApplyDiscount() {
+    const discPromo = document.getElementById('discountField').value;
+    if (discPromo === '') {
+        topPanel.error('Enter promo code');
+        return false;
+    }
+    const index = DISCOUNT.findIndex(el => el.promo === discPromo);
+    if (index === -1) {
+        topPanel.error('Promo code not found');
+        return false;
+    } 
+    const disc = DISCOUNT[index];
+    if (disc.isUsed) {
+        topPanel.error('This promo alredy used');
+        return false;
+    } 
+    let newTotal = calcDiscount(disc);
+    DISCOUNT[index].isUsed = true;
+    document.getElementById('discValue').innerText = disc.value + (disc.type === 'fixed' ? ' UAH' : '%');
+    document.getElementById('totalWithDisc').innerText = (newTotal).toFixed(2);
+    document.getElementById('discountField').value = '';
+}
+
+function calcDiscount(disc) {
+    const {type, value} = disc;
+    const sumTotalValue = sumTotal();
+    switch(type){
+        case "fixed":
+            return sumTotalValue - value;
+        case "percent":
+            return sumTotalValue - (sumTotalValue / 100 * value);
+    }
+}

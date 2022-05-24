@@ -132,28 +132,287 @@
             </div>
         </div>
 
-        <div class="card-body">
-            <div class="row">
-                <div class="col-4">
-                   <p>
-                    Определить количество цифр в введенном числе.
-                   </p>
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Определить количество цифр в введенном числе.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="numberLength__input" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="numberLength()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="numberLength__Result"></div>
+                    </div>
                 </div>
-                <div class="col-4">
-                   <input type="number"  id="divideNumber__Input--1" class="me-3">
-                   <input type="number"  id="divideNumber__Input--2" class="me-3">
-                   <button 
-                   type="button" class="btn btn-info" onclick="divideNumber()">
-                   CLICK!
-                   </button>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                         Запросить у пользователя 10 чисел и подсчитать, 
+                         сколько он ввел положительных, отрицательных и 
+                         нулей. При этом также посчитать, сколько четных и 
+                         нечетных.
+                        </p>
+                    </div>
+                    <div class="col-4">
+                       <button 
+                       type="button" class="btn btn-info" onclick="PosistiveOrNegative()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="PosistiveOrNegative__Result"></div>
+                    </div>
                 </div>
-                <div class="col-4">
-                    <p>Result:</p>
-                   <div id="divideNumber__Result"></div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Зациклить калькулятор. Запросить у 
+                        пользователя 2 числа и знак, решить пример, 
+                        вывести результат и спросить, хочет ли он решить 
+                        еще один пример. 
+                        И так до тех пор, пока пользователь не откажется.
+                    </p>
+                    </div>
+                    <div class="col-4">
+                       <button 
+                       type="button" class="btn btn-info" onclick="cyrcleCalc()">
+                       CLICK!
+                       </button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Запросить у пользователя число и вывести все делители этого числа.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="findDividers__input" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="findDividers()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="findDividers__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Запросить у пользователя число и на сколько цифр его 
+                        сдвинуть. Сдвинуть цифры числа и вывести результат 
+                        (если число 123456 сдвинуть на 2 цифры, то получится 
+                        345612).
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="text"  id="reverseString__input--1" class="me-3">
+                       <input type="text"  id="reverseString__input--2" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="reverseString()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="reverseString__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Зациклить вывод дней недели таким 
+                        образом: «День недели. Хотите увидеть 
+                        следующий день?» и так до тех пор, пока 
+                        пользователь нажимает OK.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <button 
+                       type="button" class="btn btn-info" onclick="dayNow()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="dayNow__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                            <p>
+                             Запитай у користувача його вік і визначи, ким він є: 
+                             дитиною (0-11), підлітком (12-17), дорослим (18_59) 
+                             або пенсіонером (60 ...), передбач можливість 
+                             введення невірних даних.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                       <input type="text"  id="validAge__input" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="validAge()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="validAge__Result"></div>
+                    </div>
                 </div>
             </div>
         </div>
      </div>
+     <div class="container pt-4">
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Запитай у користувача п’ятирозрядне число і 
+                        визначи, чи є воно паліндромом
+                       </p>
+                    </div>
+                    <div class="col-4">
+                        <input type="text"  id="palindrom__input" class="me-3">
+                        <button 
+                        type="button" class="btn btn-info" onclick="palindrom()">
+                        CLICK!
+                        </button>
+                     </div>
+                     <div class="col-4">
+                         <p>Result:</p>
+                        <div id="palindrom__Result"></div>
+                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Запитай у користувача число від 0 до 9 і виведи йому спецсимвол, 
+                        який розташований на цій клавіші (1 !, 2 @, 3 # і т. д).
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="text"  id="num2specialySymbol__input" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="num2specialySymbol()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="num2specialySymbol__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Запитай у користувача суму покупки і 
+                        виведи суму до оплати зі знижкою:
+                          <ol>
+                            <li>
+                                від 200 до 300 - знижка буде 3%; 
+                            </li>
+                            <li>
+                                від 300 до 500 - 5%;
+                            </li>
+                              <li>
+                                від 500 і вище - 7%.
+                              </li>
+                          </ol> 
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="whatDiscount__input" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="whatDiscount()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="whatDiscount__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                       <p>
+                        Гра «Вгадай число». Запропонуй користувачеві загадати 
+                        число від 0 до 100 і відгадай його.
+                       </p>
+                    </div>
+                    <div class="col-4">
+                       <input type="number"  id="whatDiscount__input" class="me-3">
+                       <button 
+                       type="button" class="btn btn-info" onclick="whatDiscount()">
+                       CLICK!
+                       </button>
+                    </div>
+                    <div class="col-4">
+                        <p>Result:</p>
+                       <div id="whatDiscount__Result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
     </body>
 <script src="main.js"></script>
 </html>
