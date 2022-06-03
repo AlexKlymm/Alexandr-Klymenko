@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.min.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>
+                Напиши всі можливі варіанти створення функцій.
+           </p>
+           <p>
+                Відповідь у JS файлі
+           </p>
+        </div>
+        
+        <div>
+            <p>
+                Створи функцію, яка буде виводити кількість 
+                переданих їй аргументів.
+           </p>
+           <input type="text" id="numbersForLength">
+           <button type="button" 
+           onclick="checkNumberesInArguments('')">Click me!</button>
+        </div>
+
+        <div>
+            <p>
+                Напиши функцію, яка приймає 2 числа і повертає :
+                <ol>
+                    <li>
+                        -1, якщо перше число менше, ніж друге; 
+                    </li>
+                    <li>
+                        1 - якщо перше число більше, ніж друге; 
+                    </li>
+                    <li>
+                        0 - якщо числа рівні.
+                    </li>
+                </ol>
+           </p>
+           <div class="result__box">
+                <p id="checkNumbers__result">
+                    Result:
+                </p>
+            </div>
+           <button type="button" 
+           onclick="showNumberResult()">Click me!</button>
+        </div>
+
+        <div>
+            <p>
+                Напиши функцію, яка обчислює факторіал переданого їй числа.
+           </p>
+
+           <input type="text" id="factorial__input">
+           <div class="result__box">
+                <p id="factorial__result">
+                    Result:
+                </p>
+            </div>
+           <button type="button" 
+           onclick="showFactorial()">Click me!</button>
+        </div>
+        
+        <div>
+            <p>
+                Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. 
+                Наприклад: цифри 1, 4, 9 перетворяться в число 149.
+            </p>
+           <div class="result__box">
+                <p id="numbers4String__result">
+                    Result:
+                </p>
+            </div>
+           <button type="button" 
+           onclick="showUnitedNumbers()">Click me!</button>
+        </div>
+
+        <div>
+            <p>
+                Напиши функцію, яка приймає довжину і ширину прямокутника і обчислює його площу. 
+                Якщо в функцію передали 1 параметр, то вона обчислює площу квадрата.
+            </p>
+           <div class="result__box">
+                <p id="square__result">
+                    Result:
+                </p>
+            </div>
+            <input type="number" id="number__Fields--width">
+            <input type="number" id="number__Fields--length">
+           <button type="button" 
+           onclick="showSquareResult()">Click me!</button>
+        </div>
+
+        <div>
+            <p>
+                Напиши функцію, яка перевіряє, чи є передане їй число “досконалим числом”. 
+                Досконале число - це число, яке дорівнює сумі всіх своїх дільників.
+            </p>
+           <div class="result__box">
+                <p id="perfectNumber__result">
+                    Result:
+                </p>
+            </div>
+            <input type="number" id="perfectNumber__input">
+           <button type="button" 
+           onclick="showPerfectNumber()">Click me!</button>
+        </div>
+    </div>
+</body>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+main {
+    padding: 0 15px;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    background-color: coral;
+    border: none;
+    border-radius: 10px;
+    margin-right: 5px;
+    &:hover {
+        background-color: crimson;
+        cursor: pointer;
+        color: rgb(168, 162, 162);
+    }
+    &:active {
+        background-color: darkred;
+        color: white;
+    }
+}
+
+.container {
+    max-width: 1600px;
+    width: 100%;
+    border: rgb(114, 114, 114) 2px solid;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.carInfo {
+    display: flex;
+    div {
+        padding:0 5px;
+    }
+}

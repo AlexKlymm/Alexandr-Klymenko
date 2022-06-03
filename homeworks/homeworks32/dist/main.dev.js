@@ -1,5 +1,3 @@
-"use strict";
-
 // Це виклик факторіалу.
 // function factorial(n = 0) {
 //     if (n == 0) {
@@ -99,210 +97,188 @@
     }
 
     */
-var topPanel = {
-  show: function show(text, className) {
-    var panel = "<div id=\"top-panel\" class=\"top-panel ".concat(className, "\">").concat(text, "<div/>");
-
-    if (document.getElementById('top-panel') !== null) {
-      document.getElementById('top-panel').remove();
-    }
-
-    document.body.insertAdjacentHTML('afterbegin', panel);
-    this.hide();
-  },
-  hide: function hide() {
-    setTimeout(function () {
-      document.getElementById('top-panel').remove();
-    }, 3000);
-  },
-  error: function error(text) {
-    this.show(text, 'panel-error');
-  },
-  success: function success(text) {
-    this.show(text, 'panel-success');
-  },
-  info: function info(text) {
-    this.show(text, 'panel-info');
-  }
-}; // topPanel.info('lorem ipsum')
-
-var CART = [{
-  name: 'Milk',
-  qty: 1,
-  isBuy: false,
-  price: 15,
-  total: 15
-}, {
-  name: 'Bread',
-  qty: 2,
-  isBuy: false,
-  price: 23.45,
-  total: 46.9
-}];
-viewCartTable();
-
-function addToCart(name, qty, price) {
-  if (CART.find(function (el) {
-    return el.name === name;
-  }) === undefined) {
-    CART.push({
-      name: name,
-      qty: qty,
-      isBuy: false,
-      price: price,
-      total: parseFloat((qty * price).toFixed(2))
-    });
-    topPanel.success('Product succussfully added');
-  } else {
-    var prodIndex = CART.findIndex(function (el) {
-      return el.name === name;
-    });
-    var newQty = CART[prodIndex].qty + qty;
-    CART[prodIndex].qty = newQty;
-    CART[prodIndex].total = parseFloat((newQty * CART[prodIndex].price).toFixed(2));
-    topPanel.success('Product succussfully changed');
-  }
-
-  viewCartTable();
-} // addToCart('Milk', 2, 23.45)
-
-
-function checkAndAddToCard() {
-  var name = document.getElementById('product_name').value,
-      qty = parseInt(document.getElementById('product_qty').value),
-      price = parseFloat(document.getElementById('product_price').value);
-  var valid = true;
-
-  if (name === '') {
-    topPanel.error('Enter product name');
-    valid = false;
-  }
-
-  if (isNaN(qty)) {
-    topPanel.error('Enter quantity valid value');
-    valid = false;
-  }
-
-  if (qty <= 0) {
-    topPanel.error('Quantity must be positive');
-    valid = false;
-  }
-
-  if (isNaN(price)) {
-    topPanel.error('Enter price valid value');
-    valid = false;
-  }
-
-  if (price <= 0) {
-    topPanel.error('Price must be positive');
-    valid = false;
-  }
-
-  if (valid) {
-    addToCart(name, qty, price);
-    topPanel.success('Product successfully added');
-    document.getElementById('product_name').value = '';
-    document.getElementById('product_qty').value = '1';
-    document.getElementById('product_price').value = '';
-  }
-}
-
-function viewCartTable() {
-  var html = '';
-  CART.forEach(function (product) {
-    html += "\n        <tr>\n            <td>".concat(product.name, "</td>\n            <td>\n            <button class=\"btn btn-info btn-sm\" onclick=\"changeProductlyQTY('").concat(product.name, "', 'dec')\">-</button>\n            ").concat(product.qty, "\n            <button class=\"btn btn-info btn-sm\" onclick=\"changeProductlyQTY('").concat(product.name, "', 'inc')\">+</button>\n            </td>\n            <td>").concat(product.price.toFixed(2), "</td>\n            <td>").concat(product.total.toFixed(2), "</td>\n        </tr>\n        ");
-  });
-  document.getElementById('cart-tbody').innerHTML = html;
-  document.getElementById('cart-total').innerText = sumTotal().toFixed(2);
-}
-
-function changeProductlyQTY(name, action) {
-  // debugger;
-  var index = CART.findIndex(function (el) {
-    return el.name === name;
-  });
-  var newQty = 0;
-
-  if (action === 'inc') {
-    newQty = CART[index].qty + 1;
-  } else {
-    if (CART[index].qty >= 2) {
-      newQty = CART[index].qty - 1;
-    } else {
-      askProductDelete(name);
-      return false;
-    }
-  }
-
-  CART[index].qty = newQty;
-  CART[index].total = CART[index].price * newQty;
-  viewCartTable();
-}
-
-function askProductDelete(name) {
-  return confirm('Delete product? ' + name + '?');
-}
-
-function sumTotal() {
-  return CART.reduce(function (acc, curr) {
-    return acc + curr.total;
-  }, 0);
-}
-
-var DISCOUNT = [{
-  promo: 'qwe',
-  type: 'fixed',
-  // or 'percent',
-  value: 15,
-  isUsed: false
-}, {
-  promo: 'qwert',
-  type: 'percent',
-  value: 5,
-  isUsed: false
-}];
-
-function checkAndApplyDiscount() {
-  var discPromo = document.getElementById('discountField').value;
-
-  if (discPromo === '') {
-    topPanel.error('Enter promo code');
-    return false;
-  }
-
-  var index = DISCOUNT.findIndex(function (el) {
-    return el.promo === discPromo;
-  });
-
-  if (index === -1) {
-    topPanel.error('Promo code not found');
-    return false;
-  }
-
-  var disc = DISCOUNT[index];
-
-  if (disc.isUsed) {
-    topPanel.error('This promo alredy used');
-    return false;
-  }
-
-  var newTotal = calcDiscount(disc);
-  DISCOUNT[index].isUsed = true;
-  document.getElementById('discValue').innerText = disc.value + (disc.type === 'fixed' ? ' UAH' : '%');
-  document.getElementById('totalWithDisc').innerText = newTotal.toFixed(2);
-  document.getElementById('discountField').value = '';
-}
-
-function calcDiscount(disc) {
-  var type = disc.type,
-      value = disc.value;
-  var sumTotalValue = sumTotal();
-
-  switch (type) {
-    case "fixed":
-      return sumTotalValue - value;
-
-    case "percent":
-      return sumTotalValue - sumTotalValue / 100 * value;
-  }
-}
+// const topPanel = {
+//     show: function(text, className){
+//         let panel = `<div id="top-panel" class="top-panel ${className}">${text}<div/>`;
+//         if(document.getElementById('top-panel') !== null) {
+//             document.getElementById('top-panel').remove();
+//         }
+//         document.body.insertAdjacentHTML('afterbegin', panel);
+//         this.hide();
+//     },
+//     hide: function() {
+//         setTimeout(function() {
+//             document.getElementById('top-panel').remove();
+//         },3000);
+//     },
+//     error: function(text) {
+//         this.show(text, 'panel-error');
+//     },
+//     success: function(text) {
+//         this.show(text, 'panel-success');
+//     },
+//     info: function(text) {
+//         this.show(text, 'panel-info');
+//     }
+// }
+// // topPanel.info('lorem ipsum')
+// const CART = [
+//     {
+//         name: 'Milk',
+//         qty: 1,
+//         isBuy: false,
+//         price: 15,
+//         total: 15
+//     },
+//     {
+//         name: 'Bread',
+//         qty: 2,
+//         isBuy: false,
+//         price: 23.45,
+//         total: 46.9
+//     }
+// ];
+// viewCartTable();
+// function addToCart(name, qty, price) {
+//     if( CART.find(el => el.name === name) === undefined) {
+//         CART.push ({
+//             name: name,
+//             qty: qty,
+//             isBuy: false,
+//             price: price,
+//             total: parseFloat((qty * price).toFixed(2))
+//         });
+//         topPanel.success('Product succussfully added')
+//     } else {
+//         const prodIndex = CART.findIndex(el => el.name===name);
+//         const newQty = CART[prodIndex].qty + qty;
+//         CART[prodIndex].qty = newQty;
+//         CART[prodIndex].total = parseFloat((newQty * CART[prodIndex].price).toFixed(2))
+//         topPanel.success('Product succussfully changed')
+//     }
+//     viewCartTable();
+// }
+// // addToCart('Milk', 2, 23.45)
+// function checkAndAddToCard() {
+//     let name = document.getElementById('product_name').value,
+//         qty = parseInt(document.getElementById('product_qty').value),
+//         price = parseFloat(document.getElementById('product_price').value);
+//     let valid = true;
+//     if (name === '') {
+//         topPanel.error('Enter product name');
+//         valid = false;
+//     }
+//     if (isNaN(qty)) {
+//         topPanel.error('Enter quantity valid value');
+//         valid = false;
+//     }
+//     if (qty <= 0) {
+//         topPanel.error('Quantity must be positive');
+//         valid = false;
+//     }
+//     if (isNaN(price)) {
+//         topPanel.error('Enter price valid value');
+//         valid = false;
+//     }
+//     if (price <= 0) {
+//         topPanel.error('Price must be positive');
+//         valid = false;
+//     }    
+//     if (valid) {
+//         addToCart(name, qty, price)
+//         topPanel.success('Product successfully added');
+//         document.getElementById('product_name').value = '';
+//         document.getElementById('product_qty').value = '1';
+//         document.getElementById('product_price').value = '';
+//     }
+// }
+// function viewCartTable() {
+//     let html = '';
+//     CART.forEach(product => {
+//         html += `
+//         <tr>
+//             <td>${product.name}</td>
+//             <td>
+//             <button class="btn btn-info btn-sm" onclick="changeProductlyQTY('${product.name}', 'dec')">-</button>
+//             ${product.qty}
+//             <button class="btn btn-info btn-sm" onclick="changeProductlyQTY('${product.name}', 'inc')">+</button>
+//             </td>
+//             <td>${product.price.toFixed(2)}</td>
+//             <td>${product.total.toFixed(2)}</td>
+//         </tr>
+//         `;
+//     });
+//     document.getElementById('cart-tbody').innerHTML = html;
+//     document.getElementById('cart-total').innerText = (sumTotal()).toFixed(2);
+// } 
+// function changeProductlyQTY(name, action) {
+//     // debugger;
+//     const index = CART.findIndex(el => el.name === name);
+//     let newQty = 0;
+//     if (action === 'inc') {
+//         newQty = CART[index].qty + 1;
+//     } else {
+//         if(CART[index].qty >= 2) {
+//             newQty = CART[index].qty - 1;
+//         } else {
+//             askProductDelete(name);
+//             return false;
+//         }
+//     }
+//     CART[index].qty = newQty;
+//     CART[index].total = CART[index].price * newQty;
+//     viewCartTable();
+// }
+// function askProductDelete(name) {
+//     return confirm('Delete product? '+name+'?');
+// }
+// function sumTotal () {
+//     return CART.reduce((acc, curr) => {return acc + curr.total;}, 0);
+// }
+// const DISCOUNT = [
+//     {
+//         promo: 'qwe',
+//         type: 'fixed', // or 'percent',
+//         value: 15,
+//         isUsed: false
+//     },
+//     {
+//         promo: 'qwert',
+//         type: 'percent',
+//         value: 5,
+//         isUsed: false
+//     }
+// ]
+// function checkAndApplyDiscount() {
+//     const discPromo = document.getElementById('discountField').value;
+//     if (discPromo === '') {
+//         topPanel.error('Enter promo code');
+//         return false;
+//     }
+//     const index = DISCOUNT.findIndex(el => el.promo === discPromo);
+//     if (index === -1) {
+//         topPanel.error('Promo code not found');
+//         return false;
+//     } 
+//     const disc = DISCOUNT[index];
+//     if (disc.isUsed) {
+//         topPanel.error('This promo alredy used');
+//         return false;
+//     } 
+//     let newTotal = calcDiscount(disc);
+//     DISCOUNT[index].isUsed = true;
+//     document.getElementById('discValue').innerText = disc.value + (disc.type === 'fixed' ? ' UAH' : '%');
+//     document.getElementById('totalWithDisc').innerText = (newTotal).toFixed(2);
+//     document.getElementById('discountField').value = '';
+// }
+// function calcDiscount(disc) {
+//     const {type, value} = disc;
+//     const sumTotalValue = sumTotal();
+//     switch(type){
+//         case "fixed":
+//             return sumTotalValue - value;
+//         case "percent":
+//             return sumTotalValue - (sumTotalValue / 100 * value);
+//     }
+// }
+"use strict";
