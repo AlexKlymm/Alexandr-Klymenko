@@ -24,6 +24,11 @@
                 переданих їй аргументів.
            </p>
            <input type="text" id="numbersForLength">
+           <div class="result__box">
+            <p id="numbersForLength__result">
+                Result:
+            </p>
+        </div>
            <button type="button" 
            onclick="checkNumberesInArguments('')">Click me!</button>
         </div>
@@ -43,6 +48,8 @@
                     </li>
                 </ol>
            </p>
+           <input type="text" id="checkNumbers1__input">
+           <input type="text" id="checkNumbers2__input">
            <div class="result__box">
                 <p id="checkNumbers__result">
                     Result:
@@ -72,6 +79,9 @@
                 Напиши функцію, яка приймає три окремі цифри і перетворює їх в одне число. 
                 Наприклад: цифри 1, 4, 9 перетворяться в число 149.
             </p>
+            <input type="text" id="numbers4String1__input">
+            <input type="text" id="numbers4String2__input"> 
+            <input type="text" id="numbers4String3__input">
            <div class="result__box">
                 <p id="numbers4String__result">
                     Result:
@@ -110,6 +120,24 @@
             <input type="number" id="perfectNumber__input">
            <button type="button" 
            onclick="showPerfectNumber()">Click me!</button>
+        </div>
+
+        <div>
+            <p>
+                Напиши функцію, яка приймає мінімальне 
+                і максимальне значення для діапазону, і виводить тільки ті числа з 
+                діапазону, які є досконалими. Використовуй 
+                написану раніше функцію, щоб дізнатися, чи є це число досконалим.
+            </p>
+           <div class="result__box">
+                <p id="perfectNumberInRange__result">
+                    Result:
+                </p>
+            </div>
+            <input type="number" id="perfectNumberInRange1">
+            <input type="number" id="perfectNumberInRange2">
+           <button type="button" 
+           onclick="showPerfectNumberInRange()">Click me!</button>
         </div>
     </div>
 </body>

@@ -1,13 +1,13 @@
-
 const car = {
     Mark: 'Ferrari',
     Manufacturer: 'Italy',
     Model: 'Roma',
     'Year Edition': 2019,
     'Max Speed': 320,
-    'Averege Speed': 80,
-    'Max Fuel Tank': '3855',
-    'Averege Fuel Consumption': '9.7l /100 km'
+    'Averege Speed': 180,
+    'Max Fuel Tank': 80,
+    'Averege Fuel Consumption': 9.71,
+
 }
 
 let carUl = '<div>' + '<ul>';
@@ -36,23 +36,23 @@ function addDriver() {
     document.getElementById('driverView').innerHTML = '<h6>Driver:</h6>' + driverUl;
 }
 
-
-
 let fuelTank = {
-    Fuel: 0
+    Fuel: 80
 }
 
 car.fuelTank = fuelTank;
 
-function needRefueling () {
-    let lowTank = confirm('Do you need refueling?');
+function needRefueling (text = 'Do you need refueling?') {
+    let lowTank = confirm(text);
     if (lowTank == true) {
-        car.fuelTank = {Fuel: 3855}
+        car.fuelTank.Fuel == 80;
     } else {
         alert('Your tank is low!');
+        return false;
     }
     refueling();
 }
+
 function refueling() {
     let fuelUl = '<div>' + '<ul>';
     for(let key in car.fuelTank) {
@@ -63,38 +63,251 @@ function refueling() {
 }
 
 function userRoad () {
-    let userRoad = parseInt(prompt('How many km need you drive?'));
-    let averegeSpeed = 80;
-    let requiredTime = userRoad / averegeSpeed;
-    let breakTime = (requiredTime / 4);
-        breakTime.toFixed(1);
-    let allTimeInWay = (requiredTime + breakTime).toFixed(1);
-
+    checkFuelInRoad();
     if (getTrueDriver() == false) {
         return;
     } else {
         alert('Welcome!')
     }
-
+    let userRoadDistance = +prompt('How many km need you drive?');
+    let averegeSpeed = 80;
+    let requiredTime = parseInt(userRoadDistance / averegeSpeed);
+    let breakTime = parseInt(requiredTime / 4);
+    let allTimeInWay = parseInt(requiredTime + breakTime);
+    checkFuelInRoad(userRoadDistance);
     document.getElementById('userRoadResult').innerHTML = '<div>' +`
     <h6>Your way:</h6>` + '<ul>' +
-    '<li>' + `All way with break times: ${allTimeInWay};` + '</li>' +
-    '<li>' + `Way without break times: ${requiredTime};` + '</li>' +
-    '<li>' + `Break times: ${breakTime};` + '</li>' +
-    '<li>' + `Your distance way: ${userRoad}km;` + '</li>' +
-    '<li>' + `And your averege speed; ${averegeSpeed}km/hour;` +  '</li>' + '<li>' + 'I wish you nice way on the road!' + '</li>' + '</ul>' + '</div>';
+    '<li>' + '<b>' + 'All way with break times: ' + '</b>' + `${allTimeInWay} h;` + '</li>' +
+    '<li>' + '<b>' + 'Way without break times: '  + '</b>' + `${requiredTime} h;` + '</li>' +
+    '<li>' + '<b>' + 'Break times: ' + '</b>' + `${breakTime} h;` + '</li>' +
+    '<li>' + '<b>' + 'Your distance way: '  + '</b>' + `${userRoadDistance}km;` + '</li>' +
+    '<li>' + '<b>' + 'And your averege speed: '  + '</b>'+ `${averegeSpeed}km/hour;` +  '</li>' + '<li>' + '<b>' + 'I wish you nice way on the road!' + '</b>' + '</li>' + '</ul>' + '</div>';
+}
+
+function checkFuelInRoad(userRoadDistance) {
+    const spentFuel = car['Averege Fuel Consumption'] * userRoadDistance / 100;
+    if (spentFuel > car['Max Fuel Tank']) {
+        for(let i = parseInt(spentFuel / car['Max Fuel Tank']); i != 0; i--) {
+            needRefueling(`Your way is very long. You need a park and make refueling ${i} more times. `);
+            if (needRefueling() === false) {
+                alert('You cant continue way with low tank.');
+                break;
+            }
+        }
+    }
 }
 
 function getTrueDriver() {
     let driverName = prompt('Write your driver and we check your driver license!');
-    if (driverName != 'Alex') {
-        alert('You make mistake with driver name. This driver cant use this car! Please try again!');
+    if (driverName == '' || driverName != car.driver.Name) {
+        alert('You make mistake with driver name. This driver cant use this car! Please try again with correct name or if you didnt add driver, just click on button add driver!');
         return false;
     }
 }
 
 
-function checkFuelInRoad() {
-    // ?
+
+
+
+
+
+// ================ func + obj stream + advice with teacher ==============
+
+
+// -------------------------------------------------------
+// 6
+// 1,2,3
+// 1+2+3=6
+
+
+/*
+function evenOrOddLang(lang, text) {
+  if(lang === 'ru') {
+      if(text === 'четные') {
+          return 'четные';
+      } else {
+          return 'нечетные';
+      }
+  } else if ( lang === 'en') {
+      if (text === 'четные') {
+          return 'even'
+      } else {
+          return 'odd'
+      }
+  }
+
+
+}
+//answerFunc - callback
+
+function getNumber(num, lang, answerFunc) {
+    // console.log(answerFunc);
+    if(num % 2=== 0) {
+        return answerFunc(lang, 'четные'); // сквозная передача пармаетра
+    } else {
+        return answerFunc(lang, 'нечетные');
+    }
 }
 
+console.log(getNumber(25, 'en', evenOrOddLang));
+*/
+
+//замыкание - функция, которая  возвращает функцию
+/*
+function addConst(num) {
+    num *= 10; 
+    return function(x) { // тут-то она ее и возвращает!
+        return x+num;
+    }
+}
+
+const add10 = addConst(10);
+const add20 = addConst(20);
+
+console.log(add10(2));
+console.log(add20(2));
+*/
+
+// clean function
+/*function sum (a = 0, b = 0) {
+    // return a + b;
+    // document.getElementById('rez').innerTet = 'sum' + (a+b); //не чистая функция, если там есть такое
+     проблемы в этой функции, если document.getElementById и тому подобные:
+    1. Процесс обсчитывание  - часть строки с 
+    результатом, т.е лишнее действия в  строке, 
+    которая предназначена только для вывода результата.
+    2. Посторонний процесс - собственно вывод результата в функции,
+    которая предназначена для обсчитывания перменных.
+}
+*/
+
+// console.log(sum (10, 15))
+//Recursion
+/*
+function sumTo (num) {
+ return num == 0  ? num : num + sumTo(num-1);
+}
+function sumTo2(num) {
+    let rez = 0;
+    for (let i = 1;i <= num; i++) {
+        rez += i
+    }
+    return rez;
+}
+
+function factorial (n) {
+    return n != 1 ? n * factorial(n - 1) : n = 1; 
+}
+*/
+
+//бесконечная рекурсия
+/*
+function myFunc() {
+    const text = prompt('qwe?');
+    alert(text);
+    if ( text != '' ) {
+    myFunc();
+    }
+}
+myFunc();
+*/
+
+// рекурсия с задержкой, т.к функция setTimeout(time)
+/*
+function checkNewOrders() {
+    //code request
+    setTimeout(function(){
+        checkNewOrders();
+    },300000);
+}
+*/
+
+//анонимная функция 
+/*
+function anonFuncExample(){
+    (function(){
+    //func body
+    })
+}
+*/
+//IIFE -immediately invoked function expression
+/*
+(function() {
+    console.log('hello!');
+})();
+*/
+
+//===========================hasOwnProperty()==========================
+//Object.method hasOwnProperty - check have obj this key or not 
+//                                      (return undefined if no).
+/*
+const obj = {
+    name: 'vasya',
+    // age: 25
+}
+*/
+
+// console.log(obj?.age.qqq);
+//if i try to find some obj in obj with ? i have error
+
+/*
+if(obj.hasOwnProperty('age')) {
+    console.log((obj.age.qqq));
+} else {
+    console.log('obj has no "age" property');
+}
+*/
+// in this way i have undefined, if i haven't this key in obj.
+// This method try to find the key on first level obj,
+// and he can't go on the next level if we
+// wanna try to check some key in obj in obj
+
+
+//==================Objectfreeze()/Object.isFrozen()======================
+//obj methods: Objectfreeze()/Object.isFrozen()
+/*
+const obj = {
+    name: 'vasya',
+    age: 25
+}
+*/
+
+// Object.freeze(obj);
+//Now i can't change anything in this obj, because this objhas been frozen.
+/*
+obj.age = 35;
+obj.gender = 'male';
+*/
+//This changes isn't work.
+
+// console.log(Object.isFrozen(obj));
+//This method check my obj and return true, 
+// if obj is frozen, or false if obj isn't frozen
+
+
+// Give key some variable value
+/*
+const nameKey = 'name';
+const obj = {
+    name: 'vasya',
+    age: 25
+}
+*/
+/*
+if(obj.hasOwnProperty(nameKey)) {
+    console.log(obj[nameKey]);
+    //In this way i make 2 steps: check have this obj nameKey value in key
+    //and give in console key with name, as in nameKey variable value.
+} 
+*/
+//in this way, i have in variable nameKey stirng wigh value 'name',
+//and if i give some obj this variable: console.log(obj[nameKey]),
+//i try find key in this obj with name as variable value.
+//Example: obj.name 'vasya', const nameKey = 'name', if nameKey have any 
+// another value i get undefined.
+/*
+for(let k in obj) {
+    console.log(k+': '+obj[k]);
+}
+*/
+//in this way i give in console all keys in obj.

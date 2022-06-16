@@ -10,41 +10,28 @@
     rel="stylesheet" 
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
     crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
     <body>
-        <!-- <div id="top-panel" class="top-panel"></div>
         <div class="container mt-4">
-            <div class="card">
-                <div class="card-body">
+            <div class="cart mb-4">
+                <div class="cart-body">
                     <div class="row">
                         <div class="col-6">
-                            <input type="text" 
-                            class="form-control" 
-                            placeholder="Enter good name"
-                            id="product_name">
+                            <input type="text" class="form-control" placeholder="Enter prouct name" id="product_name">
                         </div>
                         <div class="col-2">
-                            <input type="number" 
-                            class="form-control" 
-                            value="1" 
-                            id="product_qty">
+                            <input type="number" class="form-control" value="1" id="product_qty">
                         </div>
                         <div class="col-2">
-                            <input type="number"
-                            class="form-control"
-                            placeholder="Price per one"
-                            id="product_price">
+                            <input type="number" class="form-control" placeholder="Price per one" id="product_price">
                         </div>
                         <div class="col-2">
-                            <button type="button" 
-                            class="btn btn-info"
-                            onclick="checkAndAddToCard()">Add</button>
+                            <button type="button" class="btn btn-info" onclick="checkAndAddToCart()">Add</button>
                         </div>
                     </div>
                 </div>
             </div>
-
             <div class="card">
                 <div class="card-header">
                     <h4>
@@ -55,41 +42,41 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Qty</th>
-                                <th>Price</th>
-                                <th>Total</th>
+                                <td>Name</td>
+                                <td>Status</td>
+                                <td>Qty</td>
+                                <td>Price</td>
+                                <td>Total</td>
+                                <td>Action</td>
                             </tr>
                         </thead>
-                        <tbody id="cart-tbody">
-                        </tbody>
+                        <tbody id="cart-tbody"></tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="3">subTOTAL</td>
+                                <td colspan="5">Subtotal:</td>
                                 <td id="cart-total"></td>
                             </tr>
                             <tr>
-                                <td colspan="3">Discount</td>
-                                <td id="discValue"></td>
+                                <td colspan="5">Discount:</td>
+                                <td id="discountValue"></td>
                             </tr>
                             <tr>
-                                <td colspan="3">TOTAL</td>
-                                <td id="totalWithDisc"></td>
+                                <td colspan="5">Total:</td>
+                                <td id="discWithTotal"></td>
                             </tr>
                         </tfoot>
                     </table>
                 </div>
-            </div>
-            <div class="card">
-                <div class="card-header"> Discount</div>
-                <div class="card-body">
-                    <input type="text" class="form-control" id="discountField">
-                    <button type="button" class="btn btn-info" onclick="checkAndApplyDiscount()">Apply</button>
+                <div class="card">
+                    <div class="card-header">Discount</div>
+                    <div class="card-body">
+                        <input type="text" class="form-control" id="discountField">
+                        <button type="button" class="btn btn-info" onclick="checkAndApplyDiscount()">Apply</button>
+                    </div>
                 </div>
             </div>
-        </div> -->
-    
-    
+        </div>
+        <script src="assets/js/main.js"></script>
     </body>
-    <script src="main.js"></script>
+    <!-- <script src="assets/js/mainLesson.js"></script> -->
 </html>

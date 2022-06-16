@@ -29,6 +29,9 @@ button {
         background-color: darkred;
         color: white;
     }
+    &:focus {
+        border: 3px solid rgba(234, 167, 108, 0.31);
+    }
 }
 
 .container {
