@@ -20,9 +20,17 @@
   box-sizing: border-box;
 }
 
+body, footer, header, section, main {
+  width: 100%;
+  height: 100%;
+}
+
 body {
-  padding-top: 53px;
-  z-index: 15;
+  padding-top: 50px;
+}
+
+section {
+  padding: 145px 0;
 }
 
 ul, li, a, button {
@@ -64,6 +72,7 @@ p {
 }
 .button:hover {
   border: 2px solid #2C4058;
+  color: black;
 }
 
 .background {
@@ -112,8 +121,16 @@ p {
   background-color: white;
 }
 
+.mobileMenu {
+  display: none;
+}
+
+.darkBCG {
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.5s ease all;
+}
+
 header {
-  width: 100%;
   height: 54px;
   position: -webkit-sticky;
   position: sticky;
@@ -122,7 +139,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0);
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
 }
@@ -149,21 +165,22 @@ header nav ul li::before {
   height: 10px;
   position: absolute;
   top: 4px;
-  right: 70px;
+  left: -15px;
   border: 1px solid white;
   border-radius: 100%;
 }
 header nav ul li:hover::before {
   background-color: white;
 }
-header .socials {
+
+.socials {
   margin-left: 110px;
 }
-header .socials ul {
+.socials ul {
   display: flex;
   gap: 20px;
 }
-header .socials ul li {
+.socials ul li {
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -173,7 +190,7 @@ header .socials ul li {
   align-items: center;
   padding-top: 5px;
 }
-header .socials ul li:hover {
+.socials ul li:hover {
   transition: all ease 1s;
   outline: 1px solid white;
   cursor: pointer;
@@ -181,7 +198,7 @@ header .socials ul li:hover {
 
 main {
   position: relative;
-  top: -107px;
+  top: -104px;
   color: white;
 }
 main .mainScreenSlider {
@@ -254,47 +271,53 @@ main .mainScreenSlider .slick-dots {
   max-width: 100%;
 }
 
+.whatWeDoSection {
+  padding: 35px 0 140px;
+}
 .whatWeDoSection .subtitlebox {
   padding-bottom: 146px;
 }
 .whatWeDoSection .container {
-  width: 85%;
-  margin: 0 auto;
   display: flex;
   gap: 70px;
   align-items: center;
   position: relative;
-  padding: 0;
-  justify-content: flex-start;
+  padding-left: 215px;
 }
 .whatWeDoSection .container .picContainer {
   position: relative;
-  max-width: 1600px;
-  width: 100%;
 }
-.whatWeDoSection .container .picContainer .imageInfo {
+.whatWeDoSection .container .picContainer img {
+  display: none;
+}
+.whatWeDoSection .container .picContainer .backgroundImgInfo {
+  background-image: url(photos/BuildingsFuture.png);
   display: block;
   width: 630px;
   height: 470px;
-  -o-object-fit: cover;
-  object-fit: cover;
   z-index: 10;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  left: 0;
+  position: relative;
 }
 .whatWeDoSection .container .picContainer .backgroundInfo {
   width: 585px;
   height: 470px;
   z-index: 9;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 .whatWeDoSection .container .picContainer .backgroundInfoBlue {
   background-color: #55B7FF;
+  top: -57px;
+  left: -35%;
 }
 .whatWeDoSection .container .picContainer .backgroundInfoPurple {
   background-color: #7E5AFF;
+  top: -57px;
+  left: 41.5%;
+  position: absolute;
 }
 .whatWeDoSection .container .infoPart {
   display: flex;
@@ -320,14 +343,17 @@ main .mainScreenSlider .slick-dots {
   font-size: 15px;
 }
 .whatWeDoSection .reverseBlock {
-  padding: 140px 0;
-  flex-direction: row;
+  padding: 140px 215px 0 0;
+  justify-content: end;
+  flex-direction: row-reverse;
+}
+.whatWeDoSection .reverseBlock .picContainer .backgroundImgInfo {
+  background-image: url(photos/BuildingsIndustrial.png);
 }
 
 .newsSections {
   background-image: url(photos/BuildingsNews.png);
   height: 1035px;
-  padding: 135px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -345,32 +371,34 @@ main .mainScreenSlider .slick-dots {
 .newsSections .newsSlider {
   max-width: 1200px;
   width: 100%;
+  margin-left: -20px;
 }
 .newsSections .newsSlider .slick-track {
   display: flex;
   gap: 30px;
 }
 .newsSections .newsSlider .slick-prev {
-  left: -60px;
+  left: -58px;
   transform: rotate(90deg);
 }
 .newsSections .newsSlider .slick-next {
-  left: 1247px;
+  right: -75px;
   transform: rotate(270deg);
 }
 .newsSections .newsSlider .slick-dots {
-  top: 110%;
-  left: 44%;
+  position: static;
+  justify-content: center;
+  margin-top: 50px;
 }
 .newsSections .newsSlider .sliderItem {
   background-color: white;
   max-width: 370px;
   width: 100%;
-  max-height: 514px;
-  height: 100%;
+  height: 515px;
 }
 .newsSections .newsSlider .sliderItem .articleWrapper {
   padding: 30px 20px;
+  position: relative;
 }
 .newsSections .newsSlider .sliderItem .articleWrapper .textWrapper h5 {
   font-size: 22px;
@@ -384,9 +412,10 @@ main .mainScreenSlider .slick-dots {
   border-radius: 100%;
 }
 .newsSections .newsSlider .sliderItem .articleWrapper .writerWrapper {
-  padding-top: 39px;
   display: flex;
   align-items: center;
+  position: absolute;
+  bottom: -80px;
 }
 .newsSections .newsSlider .sliderItem .articleWrapper .writerWrapper div {
   padding-left: 20px;
@@ -406,10 +435,12 @@ main .mainScreenSlider .slick-dots {
   flex-direction: column;
   align-items: center;
 }
+.gallerySection .subtitlebox {
+  padding-bottom: 60px;
+}
 .gallerySection .container {
   display: grid;
   gap: 10px;
-  padding: 90px 215px 60px;
 }
 .gallerySection .container .firstItemGallery {
   grid-area: 1/1/4/2;
@@ -431,4 +462,284 @@ main .mainScreenSlider .slick-dots {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+}
+.gallerySection .button {
+  margin-top: 90px;
+}
+
+.mapSection {
+  padding: 0;
+  position: relative;
+}
+.mapSection .map {
+  height: 700px;
+  width: 100%;
+}
+
+footer {
+  height: 550px;
+  background-image: url(photos/footerBCG.png);
+}
+footer .contacts {
+  display: flex;
+  flex-direction: column;
+  width: 770px;
+  height: 450px;
+  padding: 60px;
+  margin: 0 auto;
+  position: relative;
+  top: -325px;
+  z-index: 666;
+  background-image: url(photos/contactsBCG.png);
+}
+footer .contacts .subtitlebox {
+  padding: 0 0 42px 0;
+}
+footer .contacts .contactWrapper {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Montserrat-Regular", serif;
+  font-size: 18px;
+}
+footer .contacts .contactWrapper .ourContacts {
+  padding-left: 20px;
+}
+footer .contacts .contactWrapper .ourContacts ul {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+footer .contacts .contactWrapper .ourContacts ul li {
+  color: black;
+}
+footer .contacts .contactWrapper .userContacts {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+footer .contacts .contactWrapper .userContacts input {
+  font-family: "Montserrat-Regular", serif;
+  font-size: 18px;
+  width: 310px;
+  height: 41px;
+  outline: none;
+  border: none;
+  border-bottom: #4B5562 1px solid;
+  opacity: 0.5;
+}
+footer .contacts .contactWrapper .userContacts input:focus {
+  color: black;
+  border-bottom: black 1px solid;
+  opacity: 1;
+}
+footer .contacts .contactWrapper .userContacts .button {
+  position: relative;
+  left: 55%;
+  width: 140px;
+}
+footer .socialsAndLogo {
+  margin: -240px auto;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 720px;
+}
+footer .socialsAndLogo .logoPart .copyrights {
+  color: white;
+  font-family: "Montserrat-Regular", serif;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 1430px) {
+  .whatWeDoSection {
+    margin: 0 auto;
+    padding-bottom: 0;
+  }
+  .whatWeDoSection .container {
+    padding: 0 0 140px 0;
+  }
+  .whatWeDoSection .container .backgroundInfo {
+    display: none;
+  }
+
+  .newsSections .newsSlider {
+    max-width: 800px;
+  }
+}
+@media screen and (max-width: 1260px) {
+  header {
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  header .logo {
+    margin: 0;
+  }
+  header .hamburgerAndSocials {
+    display: flex;
+    align-items: center;
+  }
+  header .hamburgerAndSocials .socials {
+    display: none;
+    margin: 0;
+  }
+
+  body.lock {
+    overflow: hidden;
+    padding-top: 0;
+  }
+
+  nav {
+    display: none;
+  }
+
+  header nav .hamburger.active {
+    display: none;
+    transition: 0s ease all;
+  }
+
+  .hamburger.active {
+    position: relative;
+  }
+  .hamburger.active span {
+    transition: 0s ease all;
+    transform: scale(0);
+  }
+  .hamburger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+    transition: 0.3s ease all;
+  }
+  .hamburger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+    transition: 0.3s ease all;
+  }
+
+  p {
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+  .mobileMenu.active {
+    left: 0;
+    z-index: 777;
+  }
+
+  .hamburger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 6;
+    margin-right: 11px;
+  }
+  .hamburger::before, .hamburger::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }
+  .hamburger::before {
+    top: 0;
+  }
+  .hamburger::after {
+    bottom: 0;
+  }
+  .hamburger span {
+    position: absolute;
+    background-color: white;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px;
+  }
+
+  .mobileMenu {
+    font-family: "OpenSans-Regular", serif;
+    position: fixed;
+    display: block;
+    left: -1000%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: 31;
+    transition: 0.3s ease all;
+  }
+  .mobileMenu .socials {
+    display: block;
+    margin: 0 0 0 15px;
+  }
+  .mobileMenu .anchorList {
+    margin: 80px 0 0 15px;
+    display: block;
+  }
+  .mobileMenu .anchorList li {
+    width: 60%;
+    color: #2C4058;
+    margin: 50px 0;
+    display: block;
+    font-size: 42px;
+    border-bottom: 1px solid #2C4058;
+  }
+
+  .whatWeDoSection .container {
+    flex-direction: column;
+  }
+  .whatWeDoSection .container .picContainer {
+    max-width: 630px;
+    width: 100%;
+    max-height: 470px;
+    height: 100%;
+  }
+
+  .leaflet-control {
+    top: -684px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .newsSections .newsSlider {
+    max-width: 400px;
+  }
+  .newsSections .newsSlider .slick-dots {
+    flex-wrap: wrap;
+    width: 200px;
+    margin: 40px auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  footer .contacts {
+    padding: 60px 0;
+    width: 100%;
+  }
+  footer .contacts .userContacts {
+    margin: 0 auto;
+  }
+  footer .contacts .ourContacts {
+    display: none;
+  }
+  footer .socialsAndLogo {
+    flex-direction: column;
+  }
+
+  .whatWeDoSection .container .picContainer .backgroundImgInfo {
+    display: none;
+  }
+  .whatWeDoSection .container .picContainer img {
+    display: block;
+    width: 100%;
+    max-width: 630px;
+    height: 100%;
+  }
+
+  .newsSections .newsSlider .sliderItem .articleImg {
+    max-height: 200px;
+    height: 100%;
+    width: 100%;
+  }
 }
