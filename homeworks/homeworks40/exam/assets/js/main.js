@@ -4,8 +4,18 @@ $(function(){
         verticalSwiping:true,
         dots: true,
         lazyLoad: 'progressive',
-        touchMove: true,
-
+        touchMove: true, 
+        breakpoint: 555,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        responsive: [
+            {
+            breakpoint: 800,
+            settings: {
+              dots: false
+            }
+        }
+    ]
     });
     $('.newsSlider').slick({
         arrows: true,
@@ -30,7 +40,6 @@ $(function(){
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-            //   dots: false
             }
           },
           {
@@ -54,13 +63,6 @@ $(function(){
       });
 
 });
-
-// $(document).ready(function(){
-//     $('.hamburger').click(function(event){
-//         $('.header, .hamburger, .mobile_menu').toggleClass('active');
-//         $('body').toggleClass('lock')
-// });
-// });
 
 const whoWriteArticle = [
     {
@@ -214,16 +216,19 @@ rez();
 let gallery = document.getElementById('gallery');
 lightGallery(gallery);
 
-const map = L.map('map').setView([49.4470822958475, 7.899966114385027], 13);
+const map = L.map('map').setView([0,0], 3);
 
-L.tileLayer('	https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-L.marker([49.4470822958475, 7.899966114385027]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+L.marker([40.724086583013424, -74.00454389646227]).addTo(map)
+    .bindPopup('New York City, United States - 1776 feet.')
     .openPopup();
 
+L.marker([22.319277867978162, 114.17165421538124]).addTo(map)
+    .bindPopup('Hong Kong - 1588 feet.')
+    .openPopup();
 
 $('a[href^="#"').on('click', function() {
     let href = $(this).attr('href');
@@ -233,19 +238,117 @@ $('a[href^="#"').on('click', function() {
     return false;
 });
 
-$(document).ready(function(){
+function addContacts() {
+    let html = '';
+    html+= `
+    <form name="contactsForm">
+        <div class="subtitlebox">
+            <div></div>
+            <h4 class="subtitle">
+                Get in touch
+            </h4>
+        </div>
+        <div class="contactWrapper">
+            <div class="ourContacts">
+                <ul>
+                <li><i class="icon-location icomoonBCGColor"></i> 91 Nolan Extensions Suite 670</li>
+                <li><i class="icon-phone icomoonBCGColor"></i> +001 356-868-2454</li>
+                <li><i class="icon-envelop icomoonBCGColor"></i> montichello@service.com</li>
+                <li><i class="icon-clock icomoonBCGColor"></i> From 07:05AM to 19:30PM</li>
+                </ul>
+            </div>
+            <div class="userContacts">
+                <input type="text" placeholder="Name" method="get" minlength="5" maxlength="15" action="#" name="userName">
+                <input type="email" placeholder="qwerty@mypost.com" method="get" minlength="3" action="#" name="userEmail">
+                <button type="button" class="button sendUserDate">Submit</button>
+            </div>
+        </div>
+    </form>
+    `;
+
+    document.getElementById('contacts').innerHTML = html;  
+}
+
+addContacts();
+
+function checkUsersDate() {
+    let html = '';
+    html+= `
+    <div class="infoForUser">
+        <h6>You need write required values:</h6>
+        <ul>
+            <li class="text">Your fields must be filled!</li>
+            <li class="text">Your name and email must be longer, then 3 symbols</li>
+            <li class="text">Your name must be smaller, then 15 symbols</li>
+            <li class="text">You write wrong email! Don't use any symbols, except: "@"</li>
+            <li class="text">Email example: qwerty@mypost.com</li>
+            <p class="text">
+                Please, just try again! If you have problems with date form, 
+                you can call our service center and we can make all themselves for you
+                or you can write us on email: montichello@service.com
+            </p>
+        </ul>
+    </div>
+        `;
+    document.getElementById('contacts').innerHTML = html
+};
+
+function isValidEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+function showResult(elements) {
+    $(function() {
+        $('.contacts').add(elements)
+        setTimeout(function(){
+            addContacts();
+        }, 10000);
+    });
+};
+
+function userRequired () {
+    let html = '';
+    html+= `
+            <div class="userRequired">
+                <h6>Your date has been required!</h6>
+                <p class="text">Congratulations and thank you for your experience with us!</p>
+                <p class="text">
+                    We will send you answer back in 1-2 work day. 
+                    If you have terminable questions - call us: +001 356-868-2454.
+                </p>
+            </div>
+        `;
+    document.getElementById('contacts').innerHTML = html;  
+};
+
+$(function() {
     $('.hamburger').click(function(event){
         $('.header, .hamburger, .mobileMenu').toggleClass('active');
         $('body').toggleClass('lock')
     });
-});
 
-$(document).ready(function() {
     $(window).scroll(function() {
-      if ($(document).scrollTop() > 800) {
-        $("header").addClass("darkBCG");
-      } else {
-        $("header").removeClass("darkBCG");
-      }
+        if ($(document).scrollTop() > 800) {
+          $("header").addClass("darkBCG");
+        } else {
+          $("header").removeClass("darkBCG");
+        }
+      });
+
+      $('.sendUserDate').on("click",function() {
+        debugger
+        const mainForm = document.forms.contactsForm;
+        const userEmail = mainForm.userEmail.value;
+        const userName = mainForm.userName.value;
+        if(userName === '' || userEmail ==='') {
+            showResult(checkUsersDate);
+        } else if (userEmail.length < 3 || userName.length <3) {
+            showResult(checkUsersDate);
+        } else if(isValidEmail(userEmail) === false) {
+            showResult(checkUsersDate);
+        }else {
+            showResult(userRequired);
+        }
     });
 });

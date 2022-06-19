@@ -18,7 +18,24 @@
     src: url(fonts/OpenSans-Regular.ttf);
 }
 
+@font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon/icomoon.eot?8q9xb9');
+    src:  url('fonts/icomoon/icomoon.eot?8q9xb9#iefix') format('embedded-opentype'),
+      url('fonts/icomoon/icomoon.ttf?8q9xb9') format('truetype'),
+      url('fonts/icomoon/icomoon.woff?8q9xb9') format('woff'),
+      url('fonts/icomoon/icomoon.svg?8q9xb9#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+
 $textColor: #2C4058;
+$iconsBCG: #7E5AFF;
+$whitecolor: #fff;
+$blackcolor: black;
+
 
 //==========Rules for all=================
 
@@ -46,7 +63,7 @@ ul,li, a, button {
     text-decoration: none;
     background-color: none;
     border: none;
-    color: white;
+    color: $whitecolor;
 }
 
 .subtitle, .title, h5 {
@@ -67,17 +84,21 @@ p {
 }
 
 .button {
-    background-color: white;
-    border: 1px solid black;
+    background-color: $whitecolor;
+    border: 1px solid $blackcolor;
     cursor: pointer;
     width: 190px;
     height: 50px;
-    color: #2C4058;
+    color: $textColor;
     font-family: "Montserrat-Regular",serif;
     text-transform: uppercase;
     &:hover{
         border: 2px solid $textColor;
-        color: black;
+        color: $blackcolor;
+        opacity: .7;
+    }
+    &:active {
+        opacity: 1;
     }
 }
 
@@ -90,11 +111,11 @@ p {
 .slick-arrow {
     width: 40px;
     height: 40px;
-    border: 1px solid white;
+    border: 1px solid $whitecolor;
     border-radius: 100%;
     transition: ease all 1s;
     &:hover {
-        outline: 1px solid white;
+        outline: 1px solid $whitecolor;
         &::after {
             transform: scale(1.5);
             transition: ease all 0.5s;
@@ -118,16 +139,17 @@ p {
     li {
         width: 10px;
         height: 10px;
-        border: 1px solid white;
+        border: 1px solid $whitecolor;
         background-color: transparent;
         border-radius: 100%;
         &:active, &:hover, &:focus {
-            background-color: white;
+            background-color: $whitecolor;
         }
     }
 }
 
 //==========Header===========
+
 .mobileMenu {
     display: none;
 }
@@ -161,7 +183,7 @@ header {
             gap: 93px;
             li {
                 position: relative;
-                color: white;
+                color: $whitecolor;
                 &::before{
                     content: '';
                     background-color: transparent;
@@ -170,12 +192,12 @@ header {
                     position: absolute;
                     top: 4px;
                     left: -15px;
-                    border: 1px solid white;
+                    border: 1px solid $whitecolor;
                     border-radius: 100%;
                 }
                 &:hover {
                     &::before{
-                        background-color: white;
+                        background-color: $whitecolor;
                     }
                 }
             }
@@ -192,14 +214,14 @@ header {
             width: 40px;
             height: 40px;
             border-radius: 100%;
-            border: 1px solid white;
+            border: 1px solid $whitecolor;
             display: flex;
             justify-content: center;
             align-items: center;
             padding-top: 5px;
             &:hover {
                 transition: all ease 1s;
-                outline: 1px solid white;
+                outline: 1px solid $whitecolor;
                 cursor: pointer;
             }
         }
@@ -212,7 +234,7 @@ main {
     position: relative;
     top: -104px;
     //===========Slider part============
-    color: white;
+    color: $whitecolor;
     .mainScreenSlider{
         position: relative;
         .sliderItem {
@@ -226,15 +248,15 @@ main {
                 align-items: center;
                 justify-content: center;
                 .mainPageText {
-                    color: white;
+                    color: $whitecolor;
                     p {
-                        color: white;
+                        color: $whitecolor;
                         letter-spacing: 8px;
                         text-align: center;
                     }
                     h1 {
                         padding-bottom: 30px;
-                        color: white;
+                        color: $whitecolor;
                     }
                 }
             }
@@ -256,7 +278,10 @@ main {
         }
         .slick-arrow {
             position: absolute;
-            left: 49%;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
             top: 90%;
         }
         .slick-dots {
@@ -276,7 +301,7 @@ main {
     div {
         height: 0;
         width: 100px;
-        border-top: 1px solid #2C4058;
+        border-top: 1px solid $textColor;
         padding-bottom: 35px;
     }
 }
@@ -352,7 +377,7 @@ main {
             }
             .linkOnTheStreet {
                 font-style: italic;
-                color: black;
+                color: $blackcolor;
                 font-family: "OpenSans-Regular", serif;
                 font-size: 15px;
             }
@@ -382,20 +407,15 @@ main {
     .subtitlebox{
         padding-bottom: 89px;
         div{
-            border-color: white;
+            border-color: $whitecolor;
         }
         h4 {
-            color: white;
+            color: $whitecolor;
         }
     }
     .newsSlider {
         max-width: 1200px;
         width: 100%;
-        margin-left: -20px;
-        .slick-track {
-            display: flex;
-            gap: 30px;
-        }
         .slick-prev {
             left: -58px;
             transform: rotate(90deg)
@@ -410,10 +430,11 @@ main {
             margin-top: 50px;
         }
         .sliderItem{
-            background-color: white;
+            background-color: $whitecolor;
             max-width: 370px;
             width: 100%;
             height: 515px;
+            margin: 0 15px;
             .articleWrapper {
                 padding: 30px 20px;
                 position: relative;
@@ -508,7 +529,7 @@ main {
 //=========Footer part==========================
 
 footer {
-    height: 550px;
+    min-height: 550px;
     background-image: url(photos/footerBCG.png);
     .contacts {
         display: flex;
@@ -536,7 +557,7 @@ footer {
                     flex-direction: column;
                     gap: 30px;
                     li {
-                        color: black;
+                        color: $blackcolor;
                     }
                 }
             }
@@ -553,9 +574,12 @@ footer {
                     border: none;
                     border-bottom: #4B5562 1px solid;
                     opacity: .5;
+                    &:hover {
+                        opacity: .7;
+                    }
                     &:focus {
-                        color: black;
-                        border-bottom: black 1px solid;
+                        color: $blackcolor;
+                        border-bottom: $blackcolor 1px solid;
                         opacity: 1;
                     }
                 }
@@ -573,9 +597,12 @@ footer {
         justify-content: space-between;
         width: 100%;
         max-width: 720px;
+        .ourContacts {
+            display: none;
+        }
         .logoPart {
             .copyrights {
-                color: white;
+                color: $whitecolor;
                 font-family: "Montserrat-Regular",serif;
                 font-size: 14px;
                 margin-top: 40px;
@@ -583,6 +610,26 @@ footer {
         }
     }
 }
+
+.userRequired, .infoForUser {
+    margin: auto;
+    text-align: center;
+    font-family: "Montserrat-Regular",serif;
+    h6 {
+        font-size: 24px;
+        color: $textColor;
+        padding-bottom: 10px;
+    }
+    .text {
+        color: #4B5562;
+        font-size: 20px;
+    }
+    p {
+        padding-top: 10px;
+    }
+}
+
+//===============responsive====================
 
 @media screen and (max-width: 1430px) {
     .whatWeDoSection{
@@ -602,6 +649,8 @@ footer {
     }
 }
 
+//================add hamburger==================
+
 @media screen and (max-width: 1260px) {
     header {
         justify-content: space-between;
@@ -618,13 +667,16 @@ footer {
             }
         }
     }
+
     body.lock {
         overflow: hidden;
         padding-top: 0;
     }
+
     nav {
         display: none;
     }
+
     header nav .hamburger.active {
         display: none;
         transition: 0s ease all;
@@ -647,14 +699,17 @@ footer {
             transition: 0.3s ease all;
         }
     }
+
     p {
         line-height: 20px;
         font-size: 16px;
     }
+
     .mobileMenu.active {
         left: 0;
         z-index: 777;
     }
+
     .hamburger {
         display: block;
         position: relative;
@@ -664,7 +719,7 @@ footer {
         margin-right: 11px;
         &::before, &::after {
             content: '';
-            background-color: white;
+            background-color: $whitecolor;
             position: absolute;
             width: 100%;
             height: 2px;
@@ -678,13 +733,14 @@ footer {
         }
         span {
             position: absolute;
-            background-color: white;
+            background-color: $whitecolor;
             left: 0;
             width: 100%;
             height: 2px;
             top: 9px;
         }
     }
+
     .mobileMenu {
         font-family: "OpenSans-Regular", serif;
         position: fixed;
@@ -715,6 +771,7 @@ footer {
             }
         }
     }
+    
     .whatWeDoSection {
         .container {
             flex-direction: column;
@@ -726,19 +783,37 @@ footer {
             }
         }
     }
-    // .newsSections {
-    //     .newsSlider {
-    //         .slick-arrow, .slick-next, .slick-prev, button  {
-    //             display: none !important;
-    //         }
-    //     }
-    // }
     .leaflet-control {
         top: -684px;
     }
 }
 
 @media screen and (max-width: 1000px) {
+    main {
+        .mainScreenSlider {
+            .slick-dots {
+                left: 95%;
+            }
+            .sliderItem {
+                height: 570px;
+                .bcgImg1, .bcgImg2, .bcgImg3, .bcgImg4, .bcgImg5 {
+                    height: 570px;
+                }
+            }
+        }
+        .bcgImg1, .bcgImg2, .bcgImg3, .bcgImg4, .bcgImg5 {
+            height: 600px;
+        }
+    }
+    .title {
+        font-size: 66px;
+    }
+    .subtitle {
+        font-size: 38px;
+    }
+    
+//===============sections=====================
+
     .newsSections {
         .newsSlider {
             max-width: 400px;
@@ -749,25 +824,51 @@ footer {
             }
         }
     }
-}
 
-@media screen and (max-width: 800px) {
-    footer {
-        .contacts {
-            padding: 60px 0;
-            width: 100%;
-            .userContacts {
-                margin: 0 auto;
-            }
-            .ourContacts {
+    .whatWeDoSection{
+        margin: 0 auto;
+        padding-bottom: 0;
+        .container {
+            padding: 0 0 140px 0;
+            .backgroundInfo {
                 display: none;
             }
         }
-        .socialsAndLogo {
-            flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        padding: 0;
+    }
+    
+    header {
+        .logo {
+            width: 80%;
         }
     }
+
+    main {
+        top: -54px;
+        .slick-dots {
+            left: 96%
+        }
+        .mainPageText {
+            width: 80%;
+            .title {
+                font-size: 46px;
+            }
+        }
+    }
+//===============sections=====================
+    .gallerySection {
+        padding: 80px 0;
+    }
+
     .whatWeDoSection {
+        .subtitlebox {
+            padding-bottom: 100px;
+        }
         .container {
             .picContainer{
                 .backgroundImgInfo {
@@ -775,10 +876,14 @@ footer {
                 }
                 img {
                     display: block;
-                    width: 100%;
+                    width: 80%;
                     max-width: 630px;
-                    height: 100%;
+                    height: 80%;
+                    margin: 0 auto;
                 }
+            }
+            .infoPart {
+                width: 80%;
             }
         }
     }
@@ -793,4 +898,86 @@ footer {
             }
         }
     }
+
+    footer {
+        min-height: 550px;
+        .contacts {
+            padding: 60px 0;
+            width: 100%;
+            .contactWrapper {
+                .userContacts {
+                    margin: 0 auto;
+                    .button {
+                        margin: 0 auto;
+                        left: 0;
+                    }
+                }
+                .ourContacts {
+                    display: none;
+                }
+            }
+        }
+        .socialsAndLogo {
+            margin-top: -310px;
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-direction: column-reverse;
+            text-align: center;
+            .ourContacts {
+                display: block;
+                font-size: 18px;
+                font-family: "OpenSans-Regular", serif;
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+            .socials {
+                margin: 0;
+            }
+        }
+    }
 }
+
+//===========Icomoon and styles for icon-fonts==========
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-phone:before {
+    content: "\e942";
+  }
+  .icon-envelop:before {
+    content: "\e945";
+  }
+  .icon-location:before {
+    content: "\e947";
+  }
+  .icon-clock:before {
+    content: "\e94e";
+  }
+
+  .icomoonBCGColor {
+    margin-right: 5px;
+  }
+
+  .contactWrapper {
+    .ourContacts {
+        .icomoonBCGColor {
+            color: $iconsBCG;
+        }
+    }
+  }

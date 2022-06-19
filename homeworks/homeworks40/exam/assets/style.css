@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Montserrat-Regular";
   src: url(fonts/Montserrat-Regular.ttf);
@@ -13,6 +14,14 @@
 @font-face {
   font-family: "OpenSans-Regular";
   src: url(fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: "icomoon";
+  src: url("fonts/icomoon/icomoon.eot?8q9xb9");
+  src: url("fonts/icomoon/icomoon.eot?8q9xb9#iefix") format("embedded-opentype"), url("fonts/icomoon/icomoon.ttf?8q9xb9") format("truetype"), url("fonts/icomoon/icomoon.woff?8q9xb9") format("woff"), url("fonts/icomoon/icomoon.svg?8q9xb9#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
 }
 *, *::before, *::after {
   padding: 0;
@@ -38,7 +47,7 @@ ul, li, a, button {
   text-decoration: none;
   background-color: none;
   border: none;
-  color: white;
+  color: #fff;
 }
 
 .subtitle, .title, h5 {
@@ -61,7 +70,7 @@ p {
 }
 
 .button {
-  background-color: white;
+  background-color: #fff;
   border: 1px solid black;
   cursor: pointer;
   width: 190px;
@@ -73,6 +82,10 @@ p {
 .button:hover {
   border: 2px solid #2C4058;
   color: black;
+  opacity: 0.7;
+}
+.button:active {
+  opacity: 1;
 }
 
 .background {
@@ -84,12 +97,12 @@ p {
 .slick-arrow {
   width: 40px;
   height: 40px;
-  border: 1px solid white;
+  border: 1px solid #fff;
   border-radius: 100%;
   transition: ease all 1s;
 }
 .slick-arrow:hover {
-  outline: 1px solid white;
+  outline: 1px solid #fff;
 }
 .slick-arrow:hover::after {
   transform: scale(1.5);
@@ -113,12 +126,12 @@ p {
 .slick-dots li {
   width: 10px;
   height: 10px;
-  border: 1px solid white;
+  border: 1px solid #fff;
   background-color: transparent;
   border-radius: 100%;
 }
 .slick-dots li:active, .slick-dots li:hover, .slick-dots li:focus {
-  background-color: white;
+  background-color: #fff;
 }
 
 .mobileMenu {
@@ -156,7 +169,7 @@ header nav ul {
 }
 header nav ul li {
   position: relative;
-  color: white;
+  color: #fff;
 }
 header nav ul li::before {
   content: "";
@@ -166,11 +179,11 @@ header nav ul li::before {
   position: absolute;
   top: 4px;
   left: -15px;
-  border: 1px solid white;
+  border: 1px solid #fff;
   border-radius: 100%;
 }
 header nav ul li:hover::before {
-  background-color: white;
+  background-color: #fff;
 }
 
 .socials {
@@ -184,7 +197,7 @@ header nav ul li:hover::before {
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  border: 1px solid white;
+  border: 1px solid #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -192,14 +205,14 @@ header nav ul li:hover::before {
 }
 .socials ul li:hover {
   transition: all ease 1s;
-  outline: 1px solid white;
+  outline: 1px solid #fff;
   cursor: pointer;
 }
 
 main {
   position: relative;
   top: -104px;
-  color: white;
+  color: #fff;
 }
 main .mainScreenSlider {
   position: relative;
@@ -217,16 +230,16 @@ main .mainScreenSlider .sliderItem .bcgImg1, main .mainScreenSlider .sliderItem 
   justify-content: center;
 }
 main .mainScreenSlider .sliderItem .bcgImg1 .mainPageText, main .mainScreenSlider .sliderItem .bcgImg2 .mainPageText, main .mainScreenSlider .sliderItem .bcgImg3 .mainPageText, main .mainScreenSlider .sliderItem .bcgImg4 .mainPageText, main .mainScreenSlider .sliderItem .bcgImg5 .mainPageText {
-  color: white;
+  color: #fff;
 }
 main .mainScreenSlider .sliderItem .bcgImg1 .mainPageText p, main .mainScreenSlider .sliderItem .bcgImg2 .mainPageText p, main .mainScreenSlider .sliderItem .bcgImg3 .mainPageText p, main .mainScreenSlider .sliderItem .bcgImg4 .mainPageText p, main .mainScreenSlider .sliderItem .bcgImg5 .mainPageText p {
-  color: white;
+  color: #fff;
   letter-spacing: 8px;
   text-align: center;
 }
 main .mainScreenSlider .sliderItem .bcgImg1 .mainPageText h1, main .mainScreenSlider .sliderItem .bcgImg2 .mainPageText h1, main .mainScreenSlider .sliderItem .bcgImg3 .mainPageText h1, main .mainScreenSlider .sliderItem .bcgImg4 .mainPageText h1, main .mainScreenSlider .sliderItem .bcgImg5 .mainPageText h1 {
   padding-bottom: 30px;
-  color: white;
+  color: #fff;
 }
 main .mainScreenSlider .sliderItem .bcgImg1 {
   background-image: url(photos/Buildings1.png);
@@ -245,7 +258,10 @@ main .mainScreenSlider .sliderItem .bcgImg5 {
 }
 main .mainScreenSlider .slick-arrow {
   position: absolute;
-  left: 49%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   top: 90%;
 }
 main .mainScreenSlider .slick-dots {
@@ -363,19 +379,14 @@ main .mainScreenSlider .slick-dots {
   padding-bottom: 89px;
 }
 .newsSections .subtitlebox div {
-  border-color: white;
+  border-color: #fff;
 }
 .newsSections .subtitlebox h4 {
-  color: white;
+  color: #fff;
 }
 .newsSections .newsSlider {
   max-width: 1200px;
   width: 100%;
-  margin-left: -20px;
-}
-.newsSections .newsSlider .slick-track {
-  display: flex;
-  gap: 30px;
 }
 .newsSections .newsSlider .slick-prev {
   left: -58px;
@@ -391,10 +402,11 @@ main .mainScreenSlider .slick-dots {
   margin-top: 50px;
 }
 .newsSections .newsSlider .sliderItem {
-  background-color: white;
+  background-color: #fff;
   max-width: 370px;
   width: 100%;
   height: 515px;
+  margin: 0 15px;
 }
 .newsSections .newsSlider .sliderItem .articleWrapper {
   padding: 30px 20px;
@@ -477,7 +489,7 @@ main .mainScreenSlider .slick-dots {
 }
 
 footer {
-  height: 550px;
+  min-height: 550px;
   background-image: url(photos/footerBCG.png);
 }
 footer .contacts {
@@ -527,6 +539,9 @@ footer .contacts .contactWrapper .userContacts input {
   border-bottom: #4B5562 1px solid;
   opacity: 0.5;
 }
+footer .contacts .contactWrapper .userContacts input:hover {
+  opacity: 0.7;
+}
 footer .contacts .contactWrapper .userContacts input:focus {
   color: black;
   border-bottom: black 1px solid;
@@ -544,11 +559,32 @@ footer .socialsAndLogo {
   width: 100%;
   max-width: 720px;
 }
+footer .socialsAndLogo .ourContacts {
+  display: none;
+}
 footer .socialsAndLogo .logoPart .copyrights {
-  color: white;
+  color: #fff;
   font-family: "Montserrat-Regular", serif;
   font-size: 14px;
   margin-top: 40px;
+}
+
+.userRequired, .infoForUser {
+  margin: auto;
+  text-align: center;
+  font-family: "Montserrat-Regular", serif;
+}
+.userRequired h6, .infoForUser h6 {
+  font-size: 24px;
+  color: #2C4058;
+  padding-bottom: 10px;
+}
+.userRequired .text, .infoForUser .text {
+  color: #4B5562;
+  font-size: 20px;
+}
+.userRequired p, .infoForUser p {
+  padding-top: 10px;
 }
 
 @media screen and (max-width: 1430px) {
@@ -636,7 +672,7 @@ footer .socialsAndLogo .logoPart .copyrights {
   }
   .hamburger::before, .hamburger::after {
     content: "";
-    background-color: white;
+    background-color: #fff;
     position: absolute;
     width: 100%;
     height: 2px;
@@ -650,7 +686,7 @@ footer .socialsAndLogo .logoPart .copyrights {
   }
   .hamburger span {
     position: absolute;
-    background-color: white;
+    background-color: #fff;
     left: 0;
     width: 100%;
     height: 2px;
@@ -703,6 +739,27 @@ footer .socialsAndLogo .logoPart .copyrights {
   }
 }
 @media screen and (max-width: 1000px) {
+  main .mainScreenSlider .slick-dots {
+    left: 95%;
+  }
+  main .mainScreenSlider .sliderItem {
+    height: 570px;
+  }
+  main .mainScreenSlider .sliderItem .bcgImg1, main .mainScreenSlider .sliderItem .bcgImg2, main .mainScreenSlider .sliderItem .bcgImg3, main .mainScreenSlider .sliderItem .bcgImg4, main .mainScreenSlider .sliderItem .bcgImg5 {
+    height: 570px;
+  }
+  main .bcgImg1, main .bcgImg2, main .bcgImg3, main .bcgImg4, main .bcgImg5 {
+    height: 600px;
+  }
+
+  .title {
+    font-size: 66px;
+  }
+
+  .subtitle {
+    font-size: 38px;
+  }
+
   .newsSections .newsSlider {
     max-width: 400px;
   }
@@ -711,30 +768,59 @@ footer .socialsAndLogo .logoPart .copyrights {
     width: 200px;
     margin: 40px auto;
   }
-}
-@media screen and (max-width: 800px) {
-  footer .contacts {
-    padding: 60px 0;
-    width: 100%;
-  }
-  footer .contacts .userContacts {
+
+  .whatWeDoSection {
     margin: 0 auto;
+    padding-bottom: 0;
   }
-  footer .contacts .ourContacts {
+  .whatWeDoSection .container {
+    padding: 0 0 140px 0;
+  }
+  .whatWeDoSection .container .backgroundInfo {
     display: none;
   }
-  footer .socialsAndLogo {
-    flex-direction: column;
+}
+@media screen and (max-width: 800px) {
+  body {
+    padding: 0;
   }
 
+  header .logo {
+    width: 80%;
+  }
+
+  main {
+    top: -54px;
+  }
+  main .slick-dots {
+    left: 96%;
+  }
+  main .mainPageText {
+    width: 80%;
+  }
+  main .mainPageText .title {
+    font-size: 46px;
+  }
+
+  .gallerySection {
+    padding: 80px 0;
+  }
+
+  .whatWeDoSection .subtitlebox {
+    padding-bottom: 100px;
+  }
   .whatWeDoSection .container .picContainer .backgroundImgInfo {
     display: none;
   }
   .whatWeDoSection .container .picContainer img {
     display: block;
-    width: 100%;
+    width: 80%;
     max-width: 630px;
-    height: 100%;
+    height: 80%;
+    margin: 0 auto;
+  }
+  .whatWeDoSection .container .infoPart {
+    width: 80%;
   }
 
   .newsSections .newsSlider .sliderItem .articleImg {
@@ -742,4 +828,79 @@ footer .socialsAndLogo .logoPart .copyrights {
     height: 100%;
     width: 100%;
   }
+
+  footer {
+    min-height: 550px;
+  }
+  footer .contacts {
+    padding: 60px 0;
+    width: 100%;
+  }
+  footer .contacts .contactWrapper .userContacts {
+    margin: 0 auto;
+  }
+  footer .contacts .contactWrapper .userContacts .button {
+    margin: 0 auto;
+    left: 0;
+  }
+  footer .contacts .contactWrapper .ourContacts {
+    display: none;
+  }
+  footer .socialsAndLogo {
+    margin-top: -310px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  footer .socialsAndLogo .ourContacts {
+    display: block;
+    font-size: 18px;
+    font-family: "OpenSans-Regular", serif;
+  }
+  footer .socialsAndLogo .ourContacts ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  footer .socialsAndLogo .socials {
+    margin: 0;
+  }
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "";
+}
+
+.icon-envelop:before {
+  content: "";
+}
+
+.icon-location:before {
+  content: "";
+}
+
+.icon-clock:before {
+  content: "";
+}
+
+.icomoonBCGColor {
+  margin-right: 5px;
+}
+
+.contactWrapper .ourContacts .icomoonBCGColor {
+  color: #7E5AFF;
 }
