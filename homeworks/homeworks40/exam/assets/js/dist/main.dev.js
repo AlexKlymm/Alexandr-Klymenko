@@ -192,13 +192,13 @@ $('a[href^="#"').on('click', function () {
 
 function addContacts() {
   var html = '';
-  html += "\n    <form name=\"contactsForm\">\n        <div class=\"subtitlebox\">\n            <div></div>\n            <h4 class=\"subtitle\">\n                Get in touch\n            </h4>\n        </div>\n        <div class=\"contactWrapper\">\n            <div class=\"ourContacts\">\n                <ul>\n                <li><i class=\"icon-location icomoonBCGColor\"></i> 91 Nolan Extensions Suite 670</li>\n                <li><i class=\"icon-phone icomoonBCGColor\"></i> +001 356-868-2454</li>\n                <li><i class=\"icon-envelop icomoonBCGColor\"></i> montichello@service.com</li>\n                <li><i class=\"icon-clock icomoonBCGColor\"></i> From 07:05AM to 19:30PM</li>\n                </ul>\n            </div>\n            <div class=\"userContacts\">\n                <input type=\"text\" placeholder=\"Name\" method=\"get\" minlength=\"5\" maxlength=\"15\" action=\"#\" name=\"userName\">\n                <input type=\"email\" placeholder=\"qwerty@mypost.com\" method=\"get\" minlength=\"3\" action=\"#\" name=\"userEmail\">\n                <button type=\"button\" class=\"button sendUserDate\">Submit</button>\n            </div>\n        </div>\n    </form>\n    ";
+  html += "\n    <form name=\"contactsForm\">\n        <div class=\"subtitlebox\">\n            <div></div>\n            <h4 class=\"subtitle\">\n                Get in touch\n            </h4>\n        </div>\n        <div class=\"contactWrapper\">\n            <div class=\"ourContacts\">\n                <ul>\n                <li><i class=\"icon-location icomoonBCGColor\"></i> 91 Nolan Extensions Suite 670</li>\n                <li><i class=\"icon-phone icomoonBCGColor\"></i> +001 356-868-2454</li>\n                <li><i class=\"icon-envelop icomoonBCGColor\"></i> montichello@service.com</li>\n                <li><i class=\"icon-clock icomoonBCGColor\"></i> From 07:05AM to 19:30PM</li>\n                </ul>\n            </div>\n            <div class=\"userContacts\">\n                <input type=\"text\" placeholder=\"Name\" method=\"post\" minlength=\"5\" maxlength=\"15\" action=\"\" name=\"userName\">\n                <input type=\"email\" placeholder=\"qwerty@mypost.com\" method=\"post\" minlength=\"3\" action=\"\" name=\"userEmail\">\n                <button type=\"button\" class=\"button sendUserDate\">Submit</button>\n            </div>\n        </div>\n    </form>\n    ";
   document.getElementById('contacts').innerHTML = html;
 }
 
 addContacts();
 
-function checkUsersDate() {
+function showHint() {
   var html = '';
   html += "\n    <div class=\"infoForUser\">\n        <h6>You need write required values:</h6>\n        <ul>\n            <li class=\"text\">Your fields must be filled!</li>\n            <li class=\"text\">Your name and email must be longer, then 3 symbols</li>\n            <li class=\"text\">Your name must be smaller, then 15 symbols</li>\n            <li class=\"text\">You write wrong email! Don't use any symbols, except: \"@\"</li>\n            <li class=\"text\">Email example: qwerty@mypost.com</li>\n            <p class=\"text\">\n                Please, just try again! If you have problems with date form, \n                you can call our service center and we can make all themselves for you\n                or you can write us on email: montichello@service.com\n            </p>\n        </ul>\n    </div>\n        ";
   document.getElementById('contacts').innerHTML = html;
@@ -255,13 +255,14 @@ $(function () {
     var userName = mainForm.userName.value;
 
     if (userName === '' || userEmail === '') {
-      showResult(checkUsersDate);
+      showResult(showHint);
     } else if (userEmail.length < 3 || userName.length < 3) {
-      showResult(checkUsersDate);
+      showResult(showHint);
     } else if (isValidEmail(userEmail) === false) {
-      showResult(checkUsersDate);
+      showResult(showHint);
     } else {
       showResult(userRequired);
+      mainForm.submit();
     }
   });
 });

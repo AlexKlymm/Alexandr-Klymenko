@@ -258,8 +258,8 @@ function addContacts() {
                 </ul>
             </div>
             <div class="userContacts">
-                <input type="text" placeholder="Name" method="get" minlength="5" maxlength="15" action="#" name="userName">
-                <input type="email" placeholder="qwerty@mypost.com" method="get" minlength="3" action="#" name="userEmail">
+                <input type="text" placeholder="Name" method="post" minlength="5" maxlength="15" action="" name="userName">
+                <input type="email" placeholder="qwerty@mypost.com" method="post" minlength="3" action="" name="userEmail">
                 <button type="button" class="button sendUserDate">Submit</button>
             </div>
         </div>
@@ -271,7 +271,7 @@ function addContacts() {
 
 addContacts();
 
-function checkUsersDate() {
+function showHint() {
     let html = '';
     html+= `
     <div class="infoForUser">
@@ -344,18 +344,19 @@ $(function() {
         }
       });
 
-      $('.sendUserDate').on("click",function() {
+      $('.sendUserDate').on("click", function() {
         const mainForm = document.forms.contactsForm;
         const userEmail = mainForm.userEmail.value;
         const userName = mainForm.userName.value;
         if(userName === '' || userEmail ==='') {
-            showResult(checkUsersDate);
+            showResult(showHint);
         } else if (userEmail.length < 3 || userName.length <3) {
-            showResult(checkUsersDate);
+            showResult(showHint);
         } else if(isValidEmail(userEmail) === false) {
-            showResult(checkUsersDate);
+            showResult(showHint);
         }else {
             showResult(userRequired);
+            mainForm.submit();
         }
     });
 });
