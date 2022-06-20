@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://alexklymm.github.io/Alexandr-Klymenko/homeworks/homeworks40/exam/index.html

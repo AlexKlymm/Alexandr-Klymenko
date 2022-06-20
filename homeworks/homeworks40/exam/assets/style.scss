@@ -67,7 +67,7 @@ ul,li, a, button {
 }
 
 ul,li, a, .button, input, *::before, *:hover, *:active {
-    transition: .3s all ease;
+    transition: .25s all ease;
 }
 
 a {
@@ -101,7 +101,7 @@ p {
     font-family: "Montserrat-Regular",serif;
     text-transform: uppercase;
     &:hover{
-        border: 2px solid $textColor;
+        border: 1px solid $textColor;
         color: $blackcolor;
         opacity: .7;
     }
@@ -183,6 +183,7 @@ header {
     align-items: center;
     -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
+    transition: all ease .5s;
     .logo {
         margin-right: 144px;
     }
@@ -692,24 +693,24 @@ footer {
 
     header nav .hamburger.active {
         display: none;
-        transition: 0s ease all;
+        transition: .2s ease all;
     }
     .hamburger.active {
         position: relative;
         span {
-            transition: 0s ease all;
+            transition: .2s ease all;
             transform: scale(0);
         }
         &::before {
             transform: rotate(45deg);
             top: 9px;
-            transition: 0.3s ease all;
+            transition: 0.2s ease all;
 
         }
         &::after {
             transform: rotate(-45deg);
             bottom: 9px;
-            transition: 0.3s ease all;
+            transition: 0.2s ease all;
         }
     }
 
@@ -766,7 +767,7 @@ footer {
         -webkit-backdrop-filter: blur(5px);
                 backdrop-filter: blur(5px);
         z-index: 31;
-        transition: 0.3s ease all;
+        transition: 0.2s ease all;
         .socials {
             display: block;
             margin: 0 0 0 15px ;

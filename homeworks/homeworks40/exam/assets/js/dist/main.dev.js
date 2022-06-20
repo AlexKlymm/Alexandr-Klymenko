@@ -235,10 +235,18 @@ $(function () {
     $('body').toggleClass('lock');
   });
   $(window).scroll(function () {
-    if ($(document).scrollTop() > 800) {
-      $("header").addClass("darkBCG");
-    } else {
-      $("header").removeClass("darkBCG");
+    if (screen.width >= 1001) {
+      if ($(document).scrollTop() > 790) {
+        $("header").addClass("darkBCG");
+      } else {
+        $("header").removeClass("darkBCG");
+      }
+    } else if (screen.width < 1001) {
+      if ($(document).scrollTop() > 500) {
+        $("header").addClass("darkBCG");
+      } else {
+        $("header").removeClass("darkBCG");
+      }
     }
   });
   $('.sendUserDate').on("click", function () {
