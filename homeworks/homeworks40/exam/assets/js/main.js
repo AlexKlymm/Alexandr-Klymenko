@@ -337,7 +337,6 @@ $(function() {
       });
 
       $('.sendUserDate').on("click",function() {
-        debugger
         const mainForm = document.forms.contactsForm;
         const userEmail = mainForm.userEmail.value;
         const userName = mainForm.userName.value;

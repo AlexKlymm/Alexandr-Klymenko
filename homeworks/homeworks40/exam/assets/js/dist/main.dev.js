@@ -242,7 +242,6 @@ $(function () {
     }
   });
   $('.sendUserDate').on("click", function () {
-    debugger;
     var mainForm = document.forms.contactsForm;
     var userEmail = mainForm.userEmail.value;
     var userName = mainForm.userName.value;

@@ -66,6 +66,14 @@ ul,li, a, button {
     color: $whitecolor;
 }
 
+ul,li, a, .button, input, *::before, *:hover, *:active {
+    transition: .3s all ease;
+}
+
+a {
+    cursor: pointer;
+}
+
 .subtitle, .title, h5 {
     text-transform: uppercase;
     font-family: "Montserrat-Bold", serif;
@@ -106,6 +114,11 @@ p {
     background-repeat: repeat;
     background-size: cover;
     background-position: center;
+}
+
+.sliderItem {
+    cursor: -webkit-grab;
+    cursor: grab;
 }
 
 .slick-arrow {
@@ -355,7 +368,7 @@ main {
             .backgroundInfoPurple {
                 background-color: #7E5AFF;
                 top: -57px;
-                left: 41.5%;
+                left: 41%;
                 position: absolute;
             }
         }
