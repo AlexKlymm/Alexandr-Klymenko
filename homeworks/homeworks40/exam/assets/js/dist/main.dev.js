@@ -167,7 +167,7 @@ var whoWriteArticle = [{
 function rez() {
   var html = '';
   whoWriteArticle.forEach(function (article) {
-    html += "\n            <div class=\"sliderItem\">\n                <img src=\"".concat(article.articleImg, "\" alt=\"\" class=\"articleImg\">\n                <div class=\"articleWrapper\">\n                    <div class=\"textWrapper\">\n                        <h5>").concat(article.titleArticle, "</h5>\n                        <p>").concat(article.articleText, "</p>\n                    </div>\n                    <div class=\"writerWrapper\">\n                        <img src=\"").concat(article.writerImg, "\" alt=\"\">\n                        <div>\n                            <p>").concat(article.writer, "</p>\n                            <span>").concat(article.articleBirthday, "</span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        ");
+    html += "\n            <div class=\"sliderItem\">\n                <img src=\"".concat(article.articleImg, "\" alt=\"\" class=\"articleImg\">\n                <div class=\"articleWrapper\">\n                    <div class=\"textWrapper\">\n                        <h5>").concat(article.titleArticle, "</h5>\n                        <p>").concat(article.articleText, "</p>\n                    </div>\n                    <div class=\"writerWrapper\">\n                        <img src=\"").concat(article.writerImg, "\" alt=\"\" class=\"lazy\">\n                        <div>\n                            <p>").concat(article.writer, "</p>\n                            <span class=\"lazy\">").concat(article.articleBirthday, "</span>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        ");
   });
   document.getElementById('newsSlider1').innerHTML = html;
 }
@@ -266,3 +266,42 @@ $(function () {
     }
   });
 });
+
+function lazyLoad() {
+  var lazyImages = [].slice.call(document.querySelectorAll(".lazy"));
+  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-bg"));
+
+  if ("IntersectionObserver" in window) {
+    // lazy images
+    var lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+
+          if (lazyImage.dataset.srcset) {
+            lazyImage.srcset = lazyImage.dataset.srcset;
+          }
+
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+    lazyImages.forEach(function (lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+    var lazyBackgroundObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var lazyBackground = entry.target;
+          lazyBackground.style.backgroundImage = 'url(' + lazyBackground.dataset.src + ')';
+          lazyBackgroundObserver.unobserve(lazyBackground);
+        }
+      });
+    });
+    lazyBackgrounds.forEach(function (lazyBackground) {
+      lazyBackgroundObserver.observe(lazyBackground);
+    });
+  } else {}
+}
