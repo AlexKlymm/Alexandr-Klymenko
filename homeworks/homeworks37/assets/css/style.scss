@@ -1,7 +1,11 @@
 /*
  * Globals
  */
-
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Custom default button */
 .btn-secondary,
@@ -49,3 +53,38 @@ body {
   border-bottom-color: #fff;
 }
 
+.search__box {
+  width: 100%;
+  display: flex;
+  // align-items: center;
+  flex-direction: column;
+  .input__container {
+    display: inline-flex;
+    justify-content: space-evenly;
+    
+    .input__search {
+      max-width: 300px;
+      width: 100%;
+    }
+    .input__year {
+      max-width: 100px;
+      width: 100%;
+    }
+    select {
+      max-width: 100px;
+      width: 100%;
+    }
+  }
+  .btn-info {
+    max-width: 300px;
+    width: 100%;
+    margin:25px auto 0;
+  }  
+}
+.card {
+  max-width: 100%;
+  width: 100%;
+  .card-text, .card-title {
+    color: black;
+  }  
+}

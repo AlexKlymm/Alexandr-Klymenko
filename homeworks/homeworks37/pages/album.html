@@ -1,0 +1,120 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto search__box">
+      <div class="input__container">
+          <input placeholder="Movie name" type="search" id="search" class="form-control input__search" value="Batman">
+          <input placeholder="Year" type="number" class="form-control  input__year" id="year">
+          <select class="form-control" id="filmType__list">
+              <option value="movie" selected>Movie</option>
+              <option value="series">Series</option>
+          </select>
+      </div>
+      <button 
+      type="button" 
+      class="btn btn-info  " 
+      id="search_btn">
+        Search
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="album py-5 bg-light">
+  <div class="container movie_wrap">
+
+  </div>
+</div>
+
+<script>
+const API_KEY = '23582e5b';
+$(function() {
+  $('#search_btn').on('click', function() {
+    const search = $("#search").val();
+    const year = $('#year').val();
+    let type = getFilmType();
+    console.log(type);
+
+    if( search !== '') {
+      searchMovies(search, year, type).then((respons) => {
+        showMovies(respons.Search);
+      });
+      
+      // OR
+      // filterMovies(search, year);
+    }
+  });
+
+  $("body").on('click', ".btn-detail", function() {
+    // const id = $(this).attr('data-id');
+    // OR
+    const id = $(this).data("id");
+    getMovie(id).then((respons) => {
+      console.log(respons);
+    })
+  })
+
+});
+
+async function getMovie(id) {
+  return fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)  
+    .then(resp => {
+      return resp.json();
+    })
+    .then(resp => {
+      return resp;
+    })
+}
+
+async function searchMovies(search, year, type) {
+  let url = `http://www.omdbapi.com/?apikey=${API_KEY}&s=${search}`
+  if (year !== '') {
+    url += '&y='+year
+  } else if (type !== '') {
+    url+= '&type='+type
+  }
+  return fetch(url)
+    .then(resp => {
+      return resp.json();
+    })
+    .then(resp => {
+      return resp;
+    })
+};
+
+async function filterMovies(search, year, type) {
+  const movie_list = await searchMovies(search, year);
+  showMovies(movie_list.Search);
+}
+
+// async function searchMovies(search) {
+//   return $.ajax({
+//     url: `http://www.omdbapi.com/`,
+//     data: `apikey=${API_KEY}&s=${search}`,
+//     type: 'get',
+//     dataType: 'json'
+//   })
+// };
+
+function showMovies(movies) {
+  let html = ``;
+  movies.forEach(item => {
+    html += 
+    `
+    <div class="card">
+      <img src="${item.Poster}" class="card-img-top" alt="${item.title}">
+      <div class="card-body">
+        <h5 class="card-title">${item.Title}</h5>
+        <p class="card-text">${item.Year}</p>
+        <button class="btn btn-primary btn-detail" data-id="${item.imdbID}">Detaild</button>
+      </div>
+    </div>
+    `
+  });
+  $(".movie_wrap").html(html)
+
+  function getFilmType() {
+    return type = document.getElementById("filmType__list").value
+  }
+}
+
+</script>

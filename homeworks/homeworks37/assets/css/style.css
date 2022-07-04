@@ -1,6 +1,12 @@
 /*
  * Globals
  */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Custom default button */
 .btn-secondary,
 .btn-secondary:hover,
@@ -42,4 +48,39 @@ body {
 .nav-masthead .active {
   color: #fff;
   border-bottom-color: #fff;
+}
+
+.search__box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search__box .input__container {
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+.search__box .input__container .input__search {
+  max-width: 300px;
+  width: 100%;
+}
+.search__box .input__container .input__year {
+  max-width: 100px;
+  width: 100%;
+}
+.search__box .input__container select {
+  max-width: 100px;
+  width: 100%;
+}
+.search__box .btn-info {
+  max-width: 300px;
+  width: 100%;
+  margin: 25px auto 0;
+}
+
+.card {
+  max-width: 100%;
+  width: 100%;
+}
+.card .card-text, .card .card-title {
+  color: black;
 }
